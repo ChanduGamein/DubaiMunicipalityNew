@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd9da2cf43a714458e9b1e6ba80cc95, type: 3}
   m_Name: Slices_Catering_25_112487_55_230545
   m_EditorClassIdentifier: 
-  name: Slices_Catering_25_112487_55_230545
+  name: Slices Catering
   material: {fileID: 2100000, guid: edbb2e1c656e0a54a9bd69e407eddd32, type: 2}
   nCoordinate: 25.2048
   eCoordinate: 55.2708

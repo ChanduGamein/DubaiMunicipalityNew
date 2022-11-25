@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd9da2cf43a714458e9b1e6ba80cc95, type: 3}
   m_Name: Engineering_Constrution__ECC_25_007165_55_10297
   m_EditorClassIdentifier: 
-  name: Engineering_Constrution__ECC_25_007165_55_10297
+  name: Engineering Constrution ECC
   material: {fileID: 2100000, guid: edbb2e1c656e0a54a9bd69e407eddd32, type: 2}
   nCoordinate: 25.2048
   eCoordinate: 55.2708

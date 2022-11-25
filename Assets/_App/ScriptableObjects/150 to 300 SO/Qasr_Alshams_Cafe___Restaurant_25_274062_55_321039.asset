@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd9da2cf43a714458e9b1e6ba80cc95, type: 3}
   m_Name: Qasr_Alshams_Cafe___Restaurant_25_274062_55_321039
   m_EditorClassIdentifier: 
-  name: Qasr_Alshams_Cafe___Restaurant__
+  name: Qasr Alshams Cafe Restaurant
   material: {fileID: 2100000, guid: edbb2e1c656e0a54a9bd69e407eddd32, type: 2}
   nCoordinate: 25.274062
   eCoordinate: 55.321039

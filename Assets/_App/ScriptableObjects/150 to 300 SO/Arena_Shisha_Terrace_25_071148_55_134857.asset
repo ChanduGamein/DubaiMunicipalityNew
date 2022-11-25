@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd9da2cf43a714458e9b1e6ba80cc95, type: 3}
   m_Name: Arena_Shisha_Terrace_25_071148_55_134857
   m_EditorClassIdentifier: 
-  name: Arena_Shisha_Terrace_25_071148_55_134857
+  name: Arena Shisha Terrace
   material: {fileID: 2100000, guid: edbb2e1c656e0a54a9bd69e407eddd32, type: 2}
   nCoordinate: 25.2048
   eCoordinate: 55.2708
