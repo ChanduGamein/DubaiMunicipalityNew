@@ -10,20 +10,20 @@ public class MainUICanvas : MonoBehaviour
 {
     public static MainUICanvas instance = null;
     public Animator animator;
-    public TextMeshProUGUI districtName,buildingName,SensorName;
+    public TextMeshProUGUI districtName, buildingName, SensorName;
 
     public IntUnityAction unityAction;
 
-    public GameObject DistrictsCanvasNew, MainSpotsCanvasNew, BuildingsInfoCanvasNew, BuildingsCamPositions, DistrictHolder,ZoomIn,ZoomOut;
+    public GameObject DistrictsCanvasNew, MainSpotsCanvasNew, BuildingsInfoCanvasNew, BuildingsCamPositions, DistrictHolder, ZoomIn, ZoomOut;
     public BuilldingInfo _buildingInfo;
     [SerializeField] Button[] BurjKhalifaSensorButtons, PalmHotelSensorButtons;
-    [SerializeField] Button[] AddressSkySensorButtons,HolidayInnSensorButtons;
-    [SerializeField] Button[] MercureSensorButtons,SheratonSensorButtons;
+    [SerializeField] Button[] AddressSkySensorButtons, HolidayInnSensorButtons;
+    [SerializeField] Button[] MercureSensorButtons, SheratonSensorButtons;
     [SerializeField] GameObject BuildingsSensorPositions;
     public int DistrictIndex;
     public Transform LeftPanel, RightPanel;
     public Image[] HierarchyImages;
-    public Sprite[] HierarchyImagesOn, HierarchyImagesOff,SidePanelToggleSprites;
+    public Sprite[] HierarchyImagesOn, HierarchyImagesOff, SidePanelToggleSprites;
     bool SidePanelTogglebool;
     [SerializeField] Image SidePanelImg;
     public bool zoomEnabled;
@@ -33,10 +33,10 @@ public class MainUICanvas : MonoBehaviour
         {
             T.gameObject.GetComponent<Button>().onClick.AddListener(() => Highlight_Districts(T.gameObject));
         }
-        //foreach (Transform T in MainSpotsCanvasNew.transform)
-        //{
-        //    T.gameObject.SetActive(false);
-        //}
+        foreach (Transform T in MainSpotsCanvasNew.transform)
+        {
+            T.gameObject.SetActive(false);
+        }
         for (int i = 0; i < MainSpotsCanvasNew.transform.childCount; i++)
         {
             foreach (Transform T1 in MainSpotsCanvasNew.transform.GetChild(i).transform.GetChild(0).transform)
@@ -44,14 +44,14 @@ public class MainUICanvas : MonoBehaviour
                 T1.gameObject.GetComponent<Button>().onClick.AddListener(() => Highlight_Buildings(T1.gameObject.name));
                 T1.gameObject.GetComponent<Button>().onClick.AddListener(() => Get_Lat_Long(T1.gameObject.GetComponent<Building>()));
                 T1.gameObject.GetComponent<Button>().onClick.AddListener(() => T1.transform.GetChild(0).gameObject.SetActive(false));
-                
+
             }
         }
 
     }
     private void Awake()
     {
-        if (instance==null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -68,7 +68,7 @@ public class MainUICanvas : MonoBehaviour
     }
     public void DeactivateDistricts()
     {
-        DistrictHolder.GetComponent<CanvasGroup>().interactable=false;
+        DistrictHolder.GetComponent<CanvasGroup>().interactable = false;
         DistrictHolder.GetComponent<CanvasGroup>().blocksRaycasts = false;
         DistrictHolder.GetComponent<CanvasGroup>().alpha = 0;
     }
@@ -83,11 +83,18 @@ public class MainUICanvas : MonoBehaviour
         DistrictHolder.GetComponent<CanvasGroup>().blocksRaycasts = true;
         DistrictHolder.GetComponent<CanvasGroup>().alpha = 1;
     }
-   public void ActivateBuildingUI()
+    public void ActivateBuildingUI()
     {
         foreach (Transform T in MainSpotsCanvasNew.transform)
         {
             T.gameObject.SetActive(true);
+        }
+    }
+    public void DeactivateBuildingUI()
+    {
+        foreach (Transform T in MainSpotsCanvasNew.transform)
+        {
+            T.gameObject.SetActive(false);
         }
     }
     public void Highlight_Buildings(string buildingName)
@@ -97,7 +104,7 @@ public class MainUICanvas : MonoBehaviour
         foreach (Transform T in MainSpotsCanvasNew.transform)
         {
             T.gameObject.SetActive(false);
-          
+
 
         }
         _buildingInfo.BuildingName.text = buildingName;
@@ -329,7 +336,7 @@ public class MainUICanvas : MonoBehaviour
     }
     void Get_Lat_Long(Building B)
     {
-      //  _buildingInfo.gameObject.SetActive(true);
+        //  _buildingInfo.gameObject.SetActive(true);
         _buildingInfo.Latitude.text = "Latitude " + B.buildingData.nCoordinate;
         _buildingInfo.Longitude.text = "Longitude " + B.buildingData.eCoordinate;
     }
@@ -344,7 +351,7 @@ public class MainUICanvas : MonoBehaviour
         GameManager.Instance.GridSystem.ChangeBuilding(i);
         GameManager.Instance.GridSystem.pointerSubDistrictsHighlighter.DisableColorMaterial();
         GameManager.Instance.GridSystem.pointerSubDistrictsHighlighter.gameObject.SetActive(false);
-        
+
         StartCoroutine(EnableInfo(i));
         SensorsPositions(i);
     }
@@ -362,24 +369,25 @@ public class MainUICanvas : MonoBehaviour
 
     #endregion
 
-   public void SensorsPositions(int i)
+    public void SensorsPositions(int i)
     {
         buildingName.GetComponent<Button>().interactable = true;
         buildingName.gameObject.GetComponent<Button>().onClick.AddListener(() => Highlight_Buildings(buildingName.text));
 
-        if (i==0)
+        if (i == 0)
         {
-            for (int j=0; j <BurjKhalifaSensorButtons.Length;j++)
+            for (int j = 0; j < BurjKhalifaSensorButtons.Length; j++)
             {
                 BurjKhalifaSensorButtons[j].gameObject.SetActive(true);
                 BurjKhalifaSensorButtons[j].interactable = true;
             }
             BurjKhalifaSensorButtons[0].onClick.AddListener(() => FogSensorValues("Sensor1", BuildingsSensorPositions.transform.GetChild(i).transform.GetChild(0).transform));
-            BurjKhalifaSensorButtons[1].onClick.AddListener(() => FogSensorValues("Sensor2", BuildingsSensorPositions.transform.GetChild(i).transform.GetChild(1).transform));           
+            BurjKhalifaSensorButtons[1].onClick.AddListener(() => FogSensorValues("Sensor2", BuildingsSensorPositions.transform.GetChild(i).transform.GetChild(1).transform));
             BurjKhalifaSensorButtons[2].onClick.AddListener(() => FogSensorValues("Sensor3", BuildingsSensorPositions.transform.GetChild(i).transform.GetChild(2).transform));
 
 
-        }else if (i == 1)
+        }
+        else if (i == 1)
         {
             for (int j = 0; j < PalmHotelSensorButtons.Length; j++)
             {
@@ -390,7 +398,8 @@ public class MainUICanvas : MonoBehaviour
             PalmHotelSensorButtons[1].onClick.AddListener(() => FogSensorValues("Sensor2", BuildingsSensorPositions.transform.GetChild(i).transform.GetChild(1).transform));
             PalmHotelSensorButtons[2].onClick.AddListener(() => FogSensorValues("Sensor3", BuildingsSensorPositions.transform.GetChild(i).transform.GetChild(2).transform));
 
-        }else if (i == 2)
+        }
+        else if (i == 2)
         {
             for (int j = 0; j < AddressSkySensorButtons.Length; j++)
             {
@@ -401,7 +410,8 @@ public class MainUICanvas : MonoBehaviour
             AddressSkySensorButtons[1].onClick.AddListener(() => FogSensorValues("Sensor2", BuildingsSensorPositions.transform.GetChild(i).transform.GetChild(1).transform));
             AddressSkySensorButtons[2].onClick.AddListener(() => FogSensorValues("Sensor3", BuildingsSensorPositions.transform.GetChild(i).transform.GetChild(2).transform));
 
-        }else if (i == 3)
+        }
+        else if (i == 3)
         {
             for (int j = 0; j < HolidayInnSensorButtons.Length; j++)
             {
@@ -412,7 +422,8 @@ public class MainUICanvas : MonoBehaviour
             HolidayInnSensorButtons[1].onClick.AddListener(() => FogSensorValues("Sensor2", BuildingsSensorPositions.transform.GetChild(i).transform.GetChild(1).transform));
             HolidayInnSensorButtons[2].onClick.AddListener(() => FogSensorValues("Sensor3", BuildingsSensorPositions.transform.GetChild(i).transform.GetChild(2).transform));
 
-        }else if (i == 4)
+        }
+        else if (i == 4)
         {
             for (int j = 0; j < MercureSensorButtons.Length; j++)
             {
@@ -423,7 +434,8 @@ public class MainUICanvas : MonoBehaviour
             MercureSensorButtons[1].onClick.AddListener(() => FogSensorValues("Sensor2", BuildingsSensorPositions.transform.GetChild(i).transform.GetChild(1).transform));
             MercureSensorButtons[2].onClick.AddListener(() => FogSensorValues("Sensor3", BuildingsSensorPositions.transform.GetChild(i).transform.GetChild(2).transform));
 
-        }else if (i == 5)
+        }
+        else if (i == 5)
         {
             for (int j = 0; j < SheratonSensorButtons.Length; j++)
             {
@@ -435,24 +447,24 @@ public class MainUICanvas : MonoBehaviour
             SheratonSensorButtons[2].onClick.AddListener(() => FogSensorValues("Sensor3", BuildingsSensorPositions.transform.GetChild(i).transform.GetChild(2).transform));
 
         }
-      
+
 
 
     }
 
-    void FogSensorValues(string SensorId,Transform Target)
+    void FogSensorValues(string SensorId, Transform Target)
     {
         SensorName.text = SensorId;
 
         GameManager.Instance.CameraController.MoveCameraToCertainPoint(Target, false, 800);
         BuildingsInfoCanvasNew.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
         BuildingsInfoCanvasNew.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true);
-        BuildingsInfoCanvasNew.transform.GetChild(0).transform.GetChild(1).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = Target.GetComponent<FogSensorValues>().LevelVal.ToString()+"%";
+        BuildingsInfoCanvasNew.transform.GetChild(0).transform.GetChild(1).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = Target.GetComponent<FogSensorValues>().LevelVal.ToString() + "%";
         BuildingsInfoCanvasNew.transform.GetChild(0).transform.GetChild(1).transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = Target.GetComponent<FogSensorValues>().DaysLeftVal.ToString();
-        BuildingsInfoCanvasNew.transform.GetChild(0).transform.GetChild(1).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = Target.GetComponent<FogSensorValues>().BatteryLifeVal.ToString()+"%";
-        BuildingsInfoCanvasNew.transform.GetChild(0).transform.GetChild(1).transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = Target.GetComponent<FogSensorValues>().TapVal.ToString()+"%";
-        BuildingsInfoCanvasNew.transform.GetChild(0).transform.GetChild(1).transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = Target.GetComponent<FogSensorValues>().TotalSolidsVal.ToString()+"%";
-        BuildingsInfoCanvasNew.transform.GetChild(0).transform.GetChild(1).transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = Target.GetComponent<FogSensorValues>().BottomVal.ToString()+"%";
+        BuildingsInfoCanvasNew.transform.GetChild(0).transform.GetChild(1).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = Target.GetComponent<FogSensorValues>().BatteryLifeVal.ToString() + "%";
+        BuildingsInfoCanvasNew.transform.GetChild(0).transform.GetChild(1).transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = Target.GetComponent<FogSensorValues>().TapVal.ToString() + "%";
+        BuildingsInfoCanvasNew.transform.GetChild(0).transform.GetChild(1).transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = Target.GetComponent<FogSensorValues>().TotalSolidsVal.ToString() + "%";
+        BuildingsInfoCanvasNew.transform.GetChild(0).transform.GetChild(1).transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = Target.GetComponent<FogSensorValues>().BottomVal.ToString() + "%";
 
     }
     #region Districts
@@ -469,7 +481,8 @@ public class MainUICanvas : MonoBehaviour
         HierarchyImages[1].sprite = HierarchyImagesOff[1];
         HierarchyImages[2].sprite = HierarchyImagesOff[2];
     }
-    public void DistrictNavigates() {
+    public void DistrictNavigates()
+    {
         DistrictHolder.transform.GetChild(DistrictIndex - 1).GetComponent<DistrictButton>().GoToPoint();
         Debug.Log("DistrictIndex " + DistrictIndex);
         BuildingsInfoCanvasNew.SetActive(false);
@@ -481,12 +494,14 @@ public class MainUICanvas : MonoBehaviour
         HierarchyImages[0].sprite = HierarchyImagesOn[0];
         HierarchyImages[1].sprite = HierarchyImagesOff[1];
         HierarchyImages[2].sprite = HierarchyImagesOff[2];
+        ToogleHighliting.instance.EnableSubDistrictHigligtingInvoker();
+        DeactivateBuildingUI();
     }
 
-    public void BuildingtNavigates() {
+    public void BuildingtNavigates()
+    {
         buildingName.gameObject.GetComponent<Button>().onClick.AddListener(() => Highlight_Buildings(buildingName.text));
 
-        
         BuildingsInfoCanvasNew.SetActive(true);
         SensorName.GetComponent<Button>().interactable = false;
 
@@ -494,6 +509,8 @@ public class MainUICanvas : MonoBehaviour
         HierarchyImages[0].sprite = HierarchyImagesOn[0];
         HierarchyImages[1].sprite = HierarchyImagesOn[1];
         HierarchyImages[2].sprite = HierarchyImagesOff[2];
+        ToogleHighliting.instance.EnableSubDistrictHigligtingInvoker();
+        ActivateBuildingUI();
     }
     public void ResetAllSensorButtons()
     {
@@ -502,7 +519,7 @@ public class MainUICanvas : MonoBehaviour
         BuildingsInfoCanvasNew.transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(false);
         for (int j = 0; j < BurjKhalifaSensorButtons.Length; j++)
         {
-            BurjKhalifaSensorButtons[j].gameObject.SetActive(false);            
+            BurjKhalifaSensorButtons[j].gameObject.SetActive(false);
             BurjKhalifaSensorButtons[j].interactable = false;
         }
 

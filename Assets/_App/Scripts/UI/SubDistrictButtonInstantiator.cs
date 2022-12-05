@@ -22,19 +22,19 @@ public class SubDistrictButtonInstantiator : MonoBehaviour
 
             for (int i = 0; i < subDistricts.Count; i++)
             {
-                Instantiate(subDistrictButton, subDistricts[i].transform);
-            }
-           
+                var _subDistrictCanvas =Instantiate(subDistrictButton, subDistricts[i].transform);
+                var _subDistrictButton = _subDistrictCanvas.transform.GetChild(0).GetComponent<Button>();
+                var camPos = cameraPositions[i];
+
+                if (_subDistrictButton)
+                {
+                    _subDistrictButton.onClick.AddListener(() =>
+                    GoToSubDistrictPosition(camPos));
+                }
+            }  
         }
     }
-    private void Start()
-    {
-        for (int i = 0; i < subDistricts.Count - 1; i++)
-        {
-            subDistricts[i].GetComponentInChildren<Button>().onClick.AddListener(() =>
-            GoToSubDistrictPosition(cameraPositions[i]));
-        }
-    }
+
     public void GoToSubDistrictPosition(Transform subDistrictCameraPosition)
     {
         Debug.Log("subDistrict btn pressed");

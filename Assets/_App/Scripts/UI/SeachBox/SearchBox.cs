@@ -21,22 +21,24 @@ public class SearchBox : MonoBehaviour
 
     private void Awake()
     {
+        SearchList = District.GetComponentsInChildren<Building>().ToList();
         Background.gameObject.SetActive(false);
         var clearAllBtn = ClearAllBtn.gameObject.AddComponent<Button>();
         clearAllBtn.onClick.AddListener(ActivateAllBuildingOptions);
+
     }
     private void Start()
     {
         SetSearchBox();
-
-        foreach (Transform T in District)
-        {
-            var bData = T.GetComponent<Building>();
-            if (bData)
-            {
-                SearchList.Add(bData);
-            }
-        }
+       
+        //foreach (Transform T in District)
+        //{
+        //    var bData = T.GetComponent<Building>();
+        //    if (bData)
+        //    {
+        //        SearchList.Add(bData);
+        //    }
+        //}
         SearchDropDownList.CreateOptionsList(SearchList);
         isGameStarted = true;
     }
