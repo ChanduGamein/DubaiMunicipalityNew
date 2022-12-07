@@ -9,8 +9,9 @@ using UnityEngine.UI;
 public class SearchBox : MonoBehaviour
 {
     public TMP_InputField SearchWordInputField;
-    public List<Building> SearchList;
+    public List<Building> SearchList = new List<Building>();
     public SearchDropDownList SearchDropDownList;
+    public List<IVisabilityCheck> visibles = new List<IVisabilityCheck>();
 
     public Transform District;
     public Transform ClearAllBtn;
@@ -19,8 +20,20 @@ public class SearchBox : MonoBehaviour
     bool isGameStarted;
     bool isSearchWordEmpty;
 
+    private static SearchBox instance;
+    public static SearchBox Instance { get { return instance; } }
+
     private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+
         SearchList = District.GetComponentsInChildren<Building>().ToList();
         Background.gameObject.SetActive(false);
         var clearAllBtn = ClearAllBtn.gameObject.AddComponent<Button>();
@@ -44,9 +57,13 @@ public class SearchBox : MonoBehaviour
     }
     private void OnEnable()
     {
-        if (isGameStarted)
+        //if (isGameStarted)
+        //{
+        //    GameManager.Instance.GridSystem.searchBox = this;
+        //}
+        foreach (var T in visibles)
         {
-            GameManager.Instance.GridSystem.searchBox = this;
+            T.CheckVisibility();
         }
     }
     private void Update()
@@ -80,7 +97,7 @@ public class SearchBox : MonoBehaviour
     public void ActivateAllBuildingOptions()
     {
         Debug.Log("Activate");
-        foreach (Transform T in District)
+        foreach (Building T in SearchList)
         {
             T.gameObject.SetActive(true);
         }

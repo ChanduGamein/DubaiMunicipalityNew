@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Building : MonoBehaviour , IleaderBoardMember
+public class Building : MonoBehaviour, IleaderBoardMember, IVisabilityCheck
 {
     public Transform myCameraPosition;
     public Transform MyCameraRotation
@@ -14,27 +14,33 @@ public class Building : MonoBehaviour , IleaderBoardMember
     }
     public BuildingsSO buildingData;
     public float Health;
-
+   
+    public Renderer m_Renderer;
     private Image img;
     private Button button;
-    
+    private void Awake()
+    {
+        SearchBox.Instance.visibles.Add(this);
+    }
+
     private void Start()
     {
+        m_Renderer = GetComponent<Renderer>();
+
         Health = UnityEngine.Random.Range(0.0f, 1.0f) * 100;
         GameManager.Instance.GridSystem.AssignToBoardMembers(this);
 
         button = GetComponent<Button>();
-        if (button && !buildingData || buildingData?.name == "No Name") 
+        if (button && !buildingData || buildingData?.name == "No Name")
         {
             button.interactable = false;
         }
-        else if(button)
+        else if (button)
         {
             SetChartColor();
         }
         SetName();
     }
-
 
     private void OnEnable()
     {
@@ -44,10 +50,34 @@ public class Building : MonoBehaviour , IleaderBoardMember
             button.interactable = false;
         }
     }
-
+    public void CheckVisibilty()
+    {
+        if (SearchBox.Instance.SearchList.Contains(this))
+        {
+            if (m_Renderer.isVisible)
+            {
+                return;
+            }
+            else
+            {
+                SearchBox.Instance.SearchList.Remove(this);
+            }
+        }
+        else
+        {
+            if (m_Renderer.isVisible)
+            {
+                SearchBox.Instance.SearchList.Add(this);
+            }
+            else
+            {
+                return;
+            }
+        }
+    }
     private void SetChartColor()
     {
-        foreach (Transform child in transform) 
+        foreach (Transform child in transform)
         {
             img = child.GetComponent<Image>();
             if (img != null) break;
@@ -66,7 +96,7 @@ public class Building : MonoBehaviour , IleaderBoardMember
             var go = Instantiate(new GameObject(), transform);
             go.transform.localPosition = new Vector2(55, 70);
             name = go.AddComponent<TextMeshProUGUI>();
-            go.transform.localScale = new Vector3(1.5f,1.5f,1.5f);
+            go.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
         }
         string n = "";
         if (buildingData.name.Length > 15)
@@ -75,13 +105,13 @@ public class Building : MonoBehaviour , IleaderBoardMember
             n = buildingData.name.Remove(15, count);
             n = n + "...";
         }
-        else 
+        else
         {
             n = buildingData.name;
         }
         name.text = n;
 
-      
+
     }
     public void ShowDanger()
     {
@@ -89,11 +119,16 @@ public class Building : MonoBehaviour , IleaderBoardMember
     }
     public LeaderBoardMember GetMember()
     {
-        LeaderBoardMember m = new LeaderBoardMember() {
+        LeaderBoardMember m = new LeaderBoardMember()
+        {
             Name = buildingData.name,
             Health = this.Health
         };
         return m;
     }
 
+    public void CheckVisibility()
+    {
+
+    }
 }
