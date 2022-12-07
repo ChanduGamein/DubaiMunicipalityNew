@@ -64,6 +64,7 @@ public class GridSystem : MonoBehaviour
     public void GoToOrigin()
     {
         GameManager.Instance.UIManager.mainUICanvas.ActivateDistrictsInvoker();
+        GameManager.Instance.UIManager.screenCanvas.gameObject.SetActive(true);
         GameManager.Instance.GridSystem.pointerSubDistrictsHighlighter.gameObject.SetActive(true);
         ToogleHighliting.instance.EnableDistrictHigligtingInvoker();
         MainUICanvas.instance.zoomEnabled = false;

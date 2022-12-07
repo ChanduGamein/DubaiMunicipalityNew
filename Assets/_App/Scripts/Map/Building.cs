@@ -15,17 +15,17 @@ public class Building : MonoBehaviour, IleaderBoardMember, IVisabilityCheck
     public BuildingsSO buildingData;
     public float Health;
    
-    public Renderer m_Renderer;
+    public SpriteRenderer m_Renderer;
     private Image img;
     private Button button;
     private void Awake()
     {
-        SearchBox.Instance.visibles.Add(this);
+        m_Renderer = GetComponent<SpriteRenderer>();
+        //SearchBox.Instance.visibles.Add(this);
     }
 
     private void Start()
     {
-        m_Renderer = GetComponent<Renderer>();
 
         Health = UnityEngine.Random.Range(0.0f, 1.0f) * 100;
         GameManager.Instance.GridSystem.AssignToBoardMembers(this);
@@ -50,31 +50,7 @@ public class Building : MonoBehaviour, IleaderBoardMember, IVisabilityCheck
             button.interactable = false;
         }
     }
-    public void CheckVisibilty()
-    {
-        if (SearchBox.Instance.SearchList.Contains(this))
-        {
-            if (m_Renderer.isVisible)
-            {
-                return;
-            }
-            else
-            {
-                SearchBox.Instance.SearchList.Remove(this);
-            }
-        }
-        else
-        {
-            if (m_Renderer.isVisible)
-            {
-                SearchBox.Instance.SearchList.Add(this);
-            }
-            else
-            {
-                return;
-            }
-        }
-    }
+   
     private void SetChartColor()
     {
         foreach (Transform child in transform)
@@ -129,6 +105,27 @@ public class Building : MonoBehaviour, IleaderBoardMember, IVisabilityCheck
 
     public void CheckVisibility()
     {
-
+        if (SearchBox.Instance.SearchList.Contains(this))
+        {
+            if (m_Renderer.isVisible)
+            {
+                return;
+            }
+            else
+            {
+                SearchBox.Instance.SearchList.Remove(this);
+            }
+        }
+        else
+        {
+            if (m_Renderer.isVisible)
+            {
+                SearchBox.Instance.SearchList.Add(this);
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }
