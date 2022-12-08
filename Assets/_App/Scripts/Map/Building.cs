@@ -15,7 +15,7 @@ public class Building : MonoBehaviour, IleaderBoardMember, IVisabilityCheck
     public BuildingsSO buildingData;
     public float Health;
    
-    public SpriteRenderer m_Renderer;
+    private SpriteRenderer m_Renderer;
     private Image img;
     private Button button;
     private void Awake()
