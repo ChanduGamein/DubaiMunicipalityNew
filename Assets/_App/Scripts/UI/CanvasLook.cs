@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CanvasLook : MonoBehaviour
 {
-    private Camera FirstPersonCamera;
+    private GameObject FirstPersonCamera;
 
     void Start()
     {
-        FirstPersonCamera = (Camera)FindObjectOfType(typeof(Camera));
+        FirstPersonCamera = GameObject.FindGameObjectWithTag("MainCamera");
 
     }
 

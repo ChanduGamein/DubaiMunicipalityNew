@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     private int currentBuilidingOption;
     private int currentDistrictOption;
     public GameObject screenCanvas;
+    public GameObject searchBox;
 
     #region Building
 

@@ -130,6 +130,7 @@ public class CameraController : MonoBehaviour
     public void ZoomInAtCursorPosition()
     {
         GameManager.Instance.UIManager.screenCanvas.gameObject.SetActive(false);
+        GameManager.Instance.UIManager.searchBox.gameObject.SetActive(false);
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit point;
@@ -152,6 +153,7 @@ public class CameraController : MonoBehaviour
         if (beforeMovingTransform == afterMovingTransform)
         {
             GameManager.Instance.UIManager.screenCanvas.gameObject.SetActive(true);
+            GameManager.Instance.UIManager.searchBox.gameObject.SetActive(true);
         }
     }
     void zoomSpeedBoost()

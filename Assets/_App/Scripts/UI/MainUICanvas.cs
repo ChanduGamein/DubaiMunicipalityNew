@@ -484,6 +484,8 @@ public class MainUICanvas : MonoBehaviour
     public void DistrictNavigates()
     {
         DistrictHolder.transform.GetChild(DistrictIndex - 1).GetComponent<DistrictButton>().GoToPoint();
+        GameManager.Instance.UIManager.screenCanvas.gameObject.SetActive(true);
+        GameManager.Instance.UIManager.searchBox.gameObject.SetActive(true);
         Debug.Log("DistrictIndex " + DistrictIndex);
         BuildingsInfoCanvasNew.SetActive(false);
         buildingName.gameObject.GetComponent<Button>().interactable = false;
@@ -501,6 +503,8 @@ public class MainUICanvas : MonoBehaviour
     public void BuildingtNavigates()
     {
         buildingName.gameObject.GetComponent<Button>().onClick.AddListener(() => Highlight_Buildings(buildingName.text));
+        GameManager.Instance.UIManager.screenCanvas.gameObject.SetActive(true);
+        GameManager.Instance.UIManager.searchBox.gameObject.SetActive(true);
 
         BuildingsInfoCanvasNew.SetActive(true);
         SensorName.GetComponent<Button>().interactable = false;

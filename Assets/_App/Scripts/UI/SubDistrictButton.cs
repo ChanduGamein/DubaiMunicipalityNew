@@ -21,6 +21,8 @@ public class SubDistrictButton : MonoBehaviour
     public void GoToSubDistrictPosition(Transform subDistrictCameraPosition)
     {
         Debug.Log("subDistrict btn pressed");
+        GameManager.Instance.UIManager.screenCanvas.gameObject.SetActive(true);
+        GameManager.Instance.UIManager.mainUICanvas.MainSpotsCanvasNew.gameObject.SetActive(true);
         GameManager.Instance.CameraController.MoveCameraToCertainPoint(subDistrictCameraPosition, false, travelSpeed);
     }
 }

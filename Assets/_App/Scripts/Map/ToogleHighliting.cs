@@ -59,6 +59,9 @@ public class ToogleHighliting : MonoBehaviour
     {
         districts.SetActive(false);
         subDistricts.SetActive(false);
+        GameManager.Instance.UIManager.screenCanvas.gameObject.SetActive(true);
+        GameManager.Instance.UIManager.searchBox.gameObject.SetActive(true);
+        GameManager.Instance.UIManager.mainUICanvas.MainSpotsCanvasNew.gameObject.SetActive(true);
         GameManager.Instance.UIManager.mainUICanvas.ActivateBuildingUI();
         // add building UI to be activated
     }
