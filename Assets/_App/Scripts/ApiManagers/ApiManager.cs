@@ -22,6 +22,7 @@ public class ApiManager : MonoBehaviour
     string Root_URL_getCleaningStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/dashboardstatistics/cleaningstatistics";
     string Root_URL_getConnectivityStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/dashboardstatistics/connectivitystatistics";
     string Root_URL_getSensorStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/dashboardstatistics/sensorstatistics";
+    string Root_URL_getTankStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tankstate/FT0004A";
 
 
     private void Awake()
@@ -34,10 +35,10 @@ public class ApiManager : MonoBehaviour
     }
     private void Start()
     {
-      
+
 
     }
-  
+
 
     public void DashboardStats()
     {
@@ -47,6 +48,7 @@ public class ApiManager : MonoBehaviour
         APIRequest(Root_URL_getCleaningStats, AccessToken, null, onGetCleaningStatsSuccess, true, false);
         APIRequest(Root_URL_getConnectivityStats, AccessToken, null, onGetConnectivityStatsSuccess, true, false);
         APIRequest(Root_URL_getSensorStats, AccessToken, null, onGetSensorStatsSuccess, true, false);
+        APIRequest(Root_URL_getTankStats, AccessToken, null, onGetTankStatsSuccess, true, false);
     }
     void OnGetDashboardStatsSuccess(string response, string responseCode)
     {
@@ -66,7 +68,7 @@ public class ApiManager : MonoBehaviour
             Debug.Log(responseHandler.getDashboardBatteryStats.totalCount);
         }
     }
-     void onGetCleaningStatsSuccess(string response, string responseCode)
+    void onGetCleaningStatsSuccess(string response, string responseCode)
     {
         JsonUtility.FromJsonOverwrite(response, responseHandler.getDashboardCleaningStats);
         Debug.Log(response);
@@ -74,7 +76,7 @@ public class ApiManager : MonoBehaviour
         {
             Debug.Log(responseHandler.getDashboardCleaningStats.totalCount);
         }
-    } 
+    }
     void onGetConnectivityStatsSuccess(string response, string responseCode)
     {
         JsonUtility.FromJsonOverwrite(response, responseHandler.getConnectivityStats);
@@ -93,14 +95,23 @@ public class ApiManager : MonoBehaviour
             Debug.Log(responseHandler.getSensorStats.totalCount);
         }
     }
-   
+    void onGetTankStatsSuccess(string response, string responseCode)
+    {
+        JsonUtility.FromJsonOverwrite(response, responseHandler.root);
+        Debug.Log(response);
+        if (responseCode == "200")
+        {
+            Debug.Log(responseHandler.root.data.latestCloudDerivedTelemetry.bl);
+        }
+    }
+
 
 
     public static void APIRequest(string APIurl, string authToken, object formData, Action<string, string> OnSuccess, bool showLoading, bool islogin = false)
     {
         string url = APIurl;
 
-       
+
         if (!IsConnectedToInternet())
         {
             HelperUtil.HideLoading();
@@ -129,7 +140,7 @@ public class ApiManager : MonoBehaviour
                     byte[] bodyRaw = Encoding.UTF8.GetBytes(JsonUtility.ToJson(formData));
                     request.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
 
-                   
+
                     request.SetRequestHeader("Content-Type", "application/json");
                     yield return request.SendWebRequest();
                     while (!request.isDone) yield return null;
@@ -164,7 +175,7 @@ public class ApiManager : MonoBehaviour
                             {
                             }));
                         }
-                      
+
 
                     }
                 }
@@ -208,8 +219,8 @@ public class ApiManager : MonoBehaviour
 
     public static void APIRequest_Form(string APIurl, string authToken, WWWForm formData, Action<string, string> OnSuccess, bool showLoading)
     {
-        string url =  APIurl;
-      
+        string url = APIurl;
+
 
         instance.StartCoroutine(enumerator());
         IEnumerator enumerator()
@@ -249,7 +260,7 @@ public class ApiManager : MonoBehaviour
     public static void APIRequest_Put(string APIurl, string authToken, object formData, Action<string, string> OnSuccess, bool showLoading, bool otherCheck = false, bool islogin = false)
     {
         string url = APIurl;
-      
+
 
         if (instance == null) return;
 
@@ -271,7 +282,7 @@ public class ApiManager : MonoBehaviour
                     byte[] bodyRaw = Encoding.UTF8.GetBytes(JsonUtility.ToJson(formData));
                     request.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
 
-                    
+
                     request.SetRequestHeader("Content-Type", "application/json");
                     yield return request.SendWebRequest();
                     while (!request.isDone) yield return null;
@@ -284,14 +295,14 @@ public class ApiManager : MonoBehaviour
                             HelperUtil.HideLoading();
                             HelperUtil.ShowMessage(GameMessage.something_went_wrong, new MessageActionData("OK", () =>
                             {
-                                
+
                                 instance.StopAllCoroutines();
                             }));
                         }
                         else if (request.responseCode == 400) HelperUtil.ShowMessage(GameMessage.something_went_wrong, new MessageActionData("OK", () =>
                         {
                             instance.StopAllCoroutines();
-                           
+
                         }));
 
                         else OnSuccess(request.downloadHandler.text, request.responseCode.ToString());
@@ -304,7 +315,7 @@ public class ApiManager : MonoBehaviour
                             HelperUtil.HideLoading();
                             HelperUtil.ShowMessage(GameMessage.something_went_wrong, new MessageActionData("OK", () =>
                             {
-                               
+
                             }));
                         }
                         if (!otherCheck)
@@ -346,7 +357,7 @@ public class ApiManager : MonoBehaviour
                         HelperUtil.HideLoading();
                         HelperUtil.ShowMessage(GameMessage.something_went_wrong, new MessageActionData("OK", () =>
                         {
-                           
+
                         }));
                     }
                     else if (request.responseCode == 400) HelperUtil.ShowMessage(GameMessage.something_went_wrong);
