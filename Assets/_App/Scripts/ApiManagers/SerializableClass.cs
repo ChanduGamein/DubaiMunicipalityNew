@@ -115,55 +115,51 @@ public class GetSensorStats
     public bool hasPrevious;
     public List<SensorStatsdata> data;
 }
+
+
+
 [Serializable]
 public class CleaningRequestState
 {
-    public string cro_id;
     public bool is_cro;
-    public int cro_ts;
+    public object cro_ts;
     public string cro_rsn;
-    public int etc_ts;
+    public object etc_ts;
 }
 [Serializable]
 public class CleaningState
 {
     public bool is_tc;
-    public int ltc_ts;
+    public object ltc_ts;
     public bool is_tcwcp;
     public bool is_tcacpn;
     public bool is_stc;
-    public int lstc_ts;
+    public object lstc_ts;
     public bool is_stcwcp;
-    public int nsn_ts;
-    public int nsc_ts;
+    public object nsn_ts;
+    public object nsc_ts;
 }
 [Serializable]
 public class ConnectivityState
 {
     public bool is_off;
-    public int off_ts;
-    public int offd_ts;
     public bool is_dm;
-    public int dm_ts;
-    public int dmd_ts;
+    public object dm_ts;
+    public object dmd_ts;
+    public long off_ts;
+    public long offd_ts;
 }
 [Serializable]
-public class Data
+public class TankData
 {
     public string tid;
     public string lid;
     public LatestMeasuredTelemetry latestMeasuredTelemetry;
     public LatestCloudDerivedTelemetry latestCloudDerivedTelemetry;
-    public long lastTelemetryTime;
+    public object lastTelemetryTime;
     public LatestState latestState;
-    public int lastStateUpdatedTime;
+    public object lastStateUpdatedTime;
     public LatestKpiInfo latestKpiInfo;
-}
-[Serializable]
-public class InvalidReadingState
-{
-    public bool is_ir;
-    public int ir_ts;
 }
 [Serializable]
 public class LatestCloudDerivedTelemetry
@@ -181,9 +177,9 @@ public class LatestCloudDerivedTelemetry
 [Serializable]
 public class LatestKpiInfo
 {
-    public int fvc;
-    public int wwvc;
-    public int cs;
+    public long fvc;
+    public long wwvc;
+    public double cs;
     public int tcc;
     public int tcwcc;
     public int tcacc;
@@ -191,45 +187,41 @@ public class LatestKpiInfo
 [Serializable]
 public class LatestMeasuredTelemetry
 {
-    public int bsr1;
+    public List<int> bsrsp1;
+    public List<object> bsrsp2;
+    public List<object> bsrsp3;
     public double cv;
     public int bl;
     public bool s1;
     public bool sri;
+    public int bsr1;
+    public bool s2;
 }
 [Serializable]
-
 public class LatestState
 {
     public ConnectivityState connectivityState;
     public CleaningState cleaningState;
     public CleaningRequestState cleaningRequestState;
     public SensorState sensorState;
-    public OverflowState overflowState;
-    public InvalidReadingState invalidReadingState;
-}
-[Serializable]
-public class OverflowState
-{
-    public bool is_tof;
-    public int tof_ts;
 }
 [Serializable]
 public class GetTankStats
 {
-    public Data data;
+    public int pageIndex;
+    public int pageSize;
+    public int totalCount;
+    public bool hasNext;
+    public bool hasPrevious;
+    public List<TankData> data;
 }
 [Serializable]
 public class SensorState
 {
-    public int s1d_ts;
-    public int s2d_ts;
-    public int s3d_ts;
-    public string s1d_rsn;
-    public string s2d_rsn;
-    public string s3d_rsn;
+    public object s1d_ts;
+    public long s2d_ts;
+    public long s3d_ts;
 }
-
 
 
 

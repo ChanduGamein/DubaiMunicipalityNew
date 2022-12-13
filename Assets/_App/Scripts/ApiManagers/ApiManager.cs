@@ -22,7 +22,7 @@ public class ApiManager : MonoBehaviour
     string Root_URL_getCleaningStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/dashboardstatistics/cleaningstatistics";
     string Root_URL_getConnectivityStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/dashboardstatistics/connectivitystatistics";
     string Root_URL_getSensorStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/dashboardstatistics/sensorstatistics";
-    string Root_URL_getTankStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tankstate";
+    string Root_URL_getTankStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tanksstate";
 
 
     private void Awake()
@@ -101,7 +101,6 @@ public class ApiManager : MonoBehaviour
         Debug.Log(response);
         if (responseCode == "200")
         {
-            Debug.Log(responseHandler.getTankStats.data.latestCloudDerivedTelemetry.bl);
         }
     }
 
