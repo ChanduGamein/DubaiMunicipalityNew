@@ -18,7 +18,7 @@ public class APIResponseManager : MonoBehaviour
     public GetDashboardCleaningStats getDashboardCleaningStats;
     public GetConnectivityStats getConnectivityStats;
     public GetSensorStats getSensorStats;
-    public Root root;
+    public GetTankStats getTankStats;
 
 
     #endregion

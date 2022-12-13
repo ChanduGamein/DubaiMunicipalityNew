@@ -215,7 +215,7 @@ public class OverflowState
     public int tof_ts;
 }
 [Serializable]
-public class Root
+public class GetTankStats
 {
     public Data data;
 }

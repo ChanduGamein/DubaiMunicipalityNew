@@ -97,11 +97,11 @@ public class ApiManager : MonoBehaviour
     }
     void onGetTankStatsSuccess(string response, string responseCode)
     {
-        JsonUtility.FromJsonOverwrite(response, responseHandler.root);
+        JsonUtility.FromJsonOverwrite(response, responseHandler.getTankStats);
         Debug.Log(response);
         if (responseCode == "200")
         {
-            Debug.Log(responseHandler.root.data.latestCloudDerivedTelemetry.bl);
+            Debug.Log(responseHandler.getTankStats.data.latestCloudDerivedTelemetry.bl);
         }
     }
 
