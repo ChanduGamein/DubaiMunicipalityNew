@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class CleaningStatsVariables
 {
-    #region Cleaning Stats Variables
+    #region Building Stats Variables
     public Text tanksCleanedWithinComplaince;
     public Text cleanedAfterComplaince;
     public Text yetToBeCleaned;
