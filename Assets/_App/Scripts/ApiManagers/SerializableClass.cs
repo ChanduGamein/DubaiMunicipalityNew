@@ -222,6 +222,37 @@ public class SensorState
     public long s2d_ts;
     public long s3d_ts;
 }
+// Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+[Serializable]
+public class GetComplianceScore
+{
+    public List<Data> data;
+    public YearlySummaryData yearlySummaryData;
+    public TotalData totalData;
+}
+[Serializable]
+public class Data
+{
+    public int totalTanks ;
+    public int monthNo ;
+    public string monthName ;
+    public double complianceScore ;
+    public int wasteWaterVolumeCollected ;
+}
+[Serializable]
+public class TotalData
+{
+    public int totalTanks ;
+    public double complianceScore ;
+    public long wasteWaterVolumeCollected ;
+}
+[Serializable]
+public class YearlySummaryData
+{
+    public int totalTanks ;
+    public double complianceScore ;
+    public long wasteWaterVolumeCollected ;
+}
 
 
 

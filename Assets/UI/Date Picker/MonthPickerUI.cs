@@ -9,14 +9,15 @@ public class MonthPickerUI : MonoBehaviour
 {
     public int year = DateTime.Today.Year;
     public int month = DateTime.Today.Month;
-    public Text YearText;
+    public Text[] YearText;
     public GameObject MonthsButtonsParent;
+    public Text monthText;
 
     Vector3 initialScale = Vector3.one;
     public UnityEvent onWindowAnimationOpenComplete;
     public UnityEvent onWindowAnimationCloseComplete;
 
-  
+
     void Start()
     {
 
@@ -32,23 +33,25 @@ public class MonthPickerUI : MonoBehaviour
         MonthsButtonsParent.transform.GetChild(month - 1).GetChild(0).gameObject.SetActive(false);
         MonthsButtonsParent.transform.GetChild(month - 1).GetChild(1).gameObject.SetActive(true);
         MonthsButtonsParent.transform.GetChild(month - 1).GetChild(2).GetComponent<Text>().color = Color.black;
-
     }
 
     void DeselectAll()
     {
-        for(int i = 0; i < MonthsButtonsParent.transform.childCount; i++)
+        for (int i = 0; i < MonthsButtonsParent.transform.childCount; i++)
         {
             MonthsButtonsParent.transform.GetChild(i).GetChild(0).gameObject.SetActive(true);
             MonthsButtonsParent.transform.GetChild(i).GetChild(1).gameObject.SetActive(false);
-            MonthsButtonsParent.transform.GetChild(i).GetChild(2).GetComponent<Text>().color= Color.white;
+            MonthsButtonsParent.transform.GetChild(i).GetChild(2).GetComponent<Text>().color = Color.white;
         }
     }
 
     public void ChangeYear(int amount)
     {
         year += amount;
-        YearText.text = year.ToString();
+        for (int i = 0; i < YearText.Length; i++)
+        {
+            YearText[i].text = year.ToString();
+        }
     }
     public void AddYear()
     {
@@ -62,7 +65,8 @@ public class MonthPickerUI : MonoBehaviour
     public void PickCurrentDate()
     {
         PickMonth(DateTime.Now.Month);
-        ChangeYear(DateTime.Now.Year-year);
+        ChangeYear(DateTime.Now.Year - year);
+        monthText.text = DateTime.Now.ToString("MMM");
     }
 
     private void OnEnable()
@@ -91,7 +95,7 @@ public class MonthPickerUI : MonoBehaviour
                 transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, t);
 
             }
-            t =  t+(Time.fixedDeltaTime);
+            t = t + (Time.fixedDeltaTime);
             yield return new WaitForFixedUpdate();
 
         }
