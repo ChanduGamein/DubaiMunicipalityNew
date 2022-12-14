@@ -98,6 +98,5 @@ public class APIDataGet : MonoBehaviour
                 wasteWaterStatsVariables.WasteWaterHistograms[i].fillAmount = APIResponseManager.instance.getComplianceScoreStats.data[i].wasteWaterVolumeCollected;
             }
         }
-
     }
 }
