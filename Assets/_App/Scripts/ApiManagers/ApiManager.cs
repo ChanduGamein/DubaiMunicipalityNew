@@ -37,13 +37,14 @@ public class ApiManager : MonoBehaviour
     }
     private void Start()
     {
-
+        month.text = DateTime.Now.Month.ToString();
+        year.text = DateTime.Now.Year.ToString();
 
     }
 
     public void SelectDate()
     {
-       // Root_URL_getComplianceScoreStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/septic/hierarchywisemonthlycompliancescore?year=" + year.text + "&monthno=" + month.text;
+        Root_URL_getComplianceScoreStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/septic/hierarchywisemonthlycompliancescore?year=" + year.text + "&monthno=" + month.text;
     }
     public void DashboardStats()
     {
@@ -54,7 +55,7 @@ public class ApiManager : MonoBehaviour
         APIRequest(Root_URL_getConnectivityStats, AccessToken, null, onGetConnectivityStatsSuccess, true, false);
         APIRequest(Root_URL_getSensorStats, AccessToken, null, onGetSensorStatsSuccess, true, false);
         APIRequest(Root_URL_getTankStats, AccessToken, null, onGetTankStatsSuccess, true, false);
-        //  APIRequest(Root_URL_getComplianceScoreStats, AccessToken, null, onGetComplianceScoreStatsSuccess, true, false);
+        APIRequest(Root_URL_getComplianceScoreStats, AccessToken, null, onGetComplianceScoreStatsSuccess, true, false);
         APIRequest(Root_URL_getEnrolledTankStats, AccessToken, null, onGetEnrolledTankStatsSuccess, true, false);
 
 
