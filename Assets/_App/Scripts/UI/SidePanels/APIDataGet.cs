@@ -57,6 +57,7 @@ public class APIDataGet : MonoBehaviour
     {
         SetCleaningStatesToUI();
         SetBuildingStatsToUI();
+        SetWasteWaterDateToUI();
     }
     public void SetCleaningStatesToUI()
     {
@@ -89,14 +90,14 @@ public class APIDataGet : MonoBehaviour
         }
 
     }
-    //public void SetWasteWaterDateToUI()
-    //{
-    //    if (APIResponseManager.instance.getComplianceScoreStats != null)
-    //    {
-    //        for (int i = 0; i < wasteWaterStatsVariables.WasteWaterHistograms.Count; i++)
-    //        {
-    //            wasteWaterStatsVariables.WasteWaterHistograms[i].fillAmount = APIResponseManager.instance.getComplianceScoreStats.data[i].wasteWaterVolumeCollected;
-    //        }
-    //    }
-    //}
+    public void SetWasteWaterDateToUI()
+    {
+        if (APIResponseManager.instance.getComplianceScoreStats != null)
+        {
+            for (int i = 0; i < wasteWaterStatsVariables.WasteWaterHistograms.Count; i++)
+            {
+                wasteWaterStatsVariables.WasteWaterHistograms[i].fillAmount = APIResponseManager.instance.getComplianceScoreStats.data[i].wasteWaterVolumeCollected;
+            }
+        }
+    }
 }

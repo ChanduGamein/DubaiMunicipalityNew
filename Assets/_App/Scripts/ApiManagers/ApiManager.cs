@@ -59,7 +59,6 @@ public class ApiManager : MonoBehaviour
         APIRequest(Root_URL_getEnrolledTankStats, AccessToken, null, onGetEnrolledTankStatsSuccess, true, false);
 
 
-
         // Updating the UI
         APIDataGet.instance.SetApiDataToUI();
     }

@@ -21,7 +21,6 @@ public class Building : MonoBehaviour, IleaderBoardMember, IVisabilityCheck
     private void Awake()
     {
         m_Renderer = GetComponent<SpriteRenderer>();
-        //SearchBox.Instance.visibles.Add(this);
     }
 
     private void Start()
@@ -40,6 +39,8 @@ public class Building : MonoBehaviour, IleaderBoardMember, IVisabilityCheck
             SetChartColor();
         }
         SetName();
+        SearchBox.Instance.visibles.Add(this);
+
     }
 
     private void OnEnable()
