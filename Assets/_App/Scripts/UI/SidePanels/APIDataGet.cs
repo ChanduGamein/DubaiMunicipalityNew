@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class CleaningStatsVariables
 {
-    #region Building Stats Variables
+    #region Cleaning Stats Variables
     public Text tanksCleanedWithinComplaince;
     public Text cleanedAfterComplaince;
     public Text yetToBeCleaned;
@@ -19,7 +19,7 @@ public class CleaningStatsVariables
 [System.Serializable]
 public class BuildingCanvasVariables
 {
-    #region Cleaning Stats Variables
+    #region Building Stats Variables
     public Text fogThickness;
     public Text fogVolume;
     public Text wasteWaterLevel;
@@ -30,16 +30,29 @@ public class BuildingCanvasVariables
     public Text coverageState;
     #endregion
 }
+[System.Serializable]
+public class WasteWaterStatsVariables
+{
+    #region Waste Water Stats Variables
+    public List<Image> WasteWaterHistograms;
+    #endregion
+}
 public class APIDataGet : MonoBehaviour
 {
+    public static APIDataGet instance = null;
+
     public CleaningStatsVariables cleaningStatsVariables;
     public BuildingCanvasVariables buildingCanvasVariables;
+    public WasteWaterStatsVariables wasteWaterStatsVariables;
 
-    private void Update()
+    private void Awake()
     {
-        SetApiDataToUI();
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject.GetComponent(instance.GetType()));
+        DontDestroyOnLoad(gameObject);
     }
-
     public void SetApiDataToUI()
     {
         SetCleaningStatesToUI();
@@ -74,6 +87,16 @@ public class APIDataGet : MonoBehaviour
             //buildingCanvasVariables.nextCleanedOn.text = APIResponseManager.instance.getTankStats.data[0].latestState.cleaningState.nsn_ts.ToString();
             //buildingCanvasVariables.coverageState.text = APIResponseManager.instance.getTankStats.data[0].latestMeasuredTelemetry.cv.ToString();
         }
-      
+
+    }
+    public void SetWasteWaterDateToUI()
+    {
+        if (APIResponseManager.instance.getComplianceScoreStats != null)
+        {
+            for (int i = 0; i < wasteWaterStatsVariables.WasteWaterHistograms.Count; i++)
+            {
+                wasteWaterStatsVariables.WasteWaterHistograms[i].fillAmount = APIResponseManager.instance.getComplianceScoreStats.data[i].wasteWaterVolumeCollected;
+            }
+        }
     }
 }

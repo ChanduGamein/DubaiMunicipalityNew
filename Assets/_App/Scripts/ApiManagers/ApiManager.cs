@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System.Text;
 using TMPro;
-
+using UnityEngine.UI;
 
 public class ApiManager : MonoBehaviour
 {
@@ -23,7 +23,9 @@ public class ApiManager : MonoBehaviour
     string Root_URL_getConnectivityStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/dashboardstatistics/connectivitystatistics";
     string Root_URL_getSensorStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/dashboardstatistics/sensorstatistics";
     string Root_URL_getTankStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tanksstate";
-
+    string Root_URL_getComplianceScoreStats;
+    string Root_URL_getEnrolledTankStats =  "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/enrolledtanks";
+    public Text month, year;
 
     private void Awake()
     {
@@ -39,7 +41,10 @@ public class ApiManager : MonoBehaviour
 
     }
 
-
+    public void SelectDate()
+    {
+       // Root_URL_getComplianceScoreStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/septic/hierarchywisemonthlycompliancescore?year=" + year.text + "&monthno=" + month.text;
+    }
     public void DashboardStats()
     {
         Debug.Log("DashboardStats");
@@ -49,6 +54,13 @@ public class ApiManager : MonoBehaviour
         APIRequest(Root_URL_getConnectivityStats, AccessToken, null, onGetConnectivityStatsSuccess, true, false);
         APIRequest(Root_URL_getSensorStats, AccessToken, null, onGetSensorStatsSuccess, true, false);
         APIRequest(Root_URL_getTankStats, AccessToken, null, onGetTankStatsSuccess, true, false);
+        //  APIRequest(Root_URL_getComplianceScoreStats, AccessToken, null, onGetComplianceScoreStatsSuccess, true, false);
+        APIRequest(Root_URL_getEnrolledTankStats, AccessToken, null, onGetEnrolledTankStatsSuccess, true, false);
+
+
+
+        // Updating the UI
+        APIDataGet.instance.SetApiDataToUI();
     }
     void OnGetDashboardStatsSuccess(string response, string responseCode)
     {
@@ -104,8 +116,25 @@ public class ApiManager : MonoBehaviour
 
         }
     }
+    void onGetComplianceScoreStatsSuccess(string response, string responseCode)
+    {
+        JsonUtility.FromJsonOverwrite(response, responseHandler.getComplianceScoreStats);
+        Debug.Log(response);
+        if (responseCode == "200")
+        {
 
+        }
+    }
 
+    void onGetEnrolledTankStatsSuccess(string response, string responseCode)
+    {
+        JsonUtility.FromJsonOverwrite(response, responseHandler.getEnrolledTankStats);
+        Debug.Log(response);
+        if (responseCode == "200")
+        {
+
+        }
+    }
 
     public static void APIRequest(string APIurl, string authToken, object formData, Action<string, string> OnSuccess, bool showLoading, bool islogin = false)
     {
