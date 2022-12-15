@@ -91,7 +91,7 @@ public class CameraController : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
-
+        SearchBox.Instance.UpdateSearchList();
     }
     private void RotateCameraTowardsTarget(Transform target)
     {

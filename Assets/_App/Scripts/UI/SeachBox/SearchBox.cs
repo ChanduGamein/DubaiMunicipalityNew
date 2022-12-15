@@ -55,26 +55,13 @@ public class SearchBox : MonoBehaviour
         SearchDropDownList.CreateOptionsList(SearchList);
         isGameStarted = true;
     }
-    private void OnEnable()
+    public void UpdateSearchList()
     {
-        //if (isGameStarted)
-        //{
-        //    GameManager.Instance.GridSystem.searchBox = this;
-        //}
-        foreach (var T in visibles)
+                foreach (var T in visibles)
         {
             T.CheckVisibility();
         }
     }
-    private void Update()
-    {
-        //if (isSearchWordEmpty && SearchWordInputField.text == "") 
-        //{
-        //    isSearchWordEmpty = false;
-        //    ActivateAllBuildingOptions();
-        //}
-    }
-
     private void HideDropDownPanel(string arg0)
     {
         Background.gameObject.SetActive(false);

@@ -14,13 +14,13 @@ public class Building : MonoBehaviour, IleaderBoardMember, IVisabilityCheck
     }
     public BuildingsSO buildingData;
     public float Health;
-   
+
     private SpriteRenderer m_Renderer;
     private Image img;
     private Button button;
     private void Awake()
     {
-        m_Renderer = GetComponent<SpriteRenderer>();
+        m_Renderer = GetComponent<SpriteRenderer>() ? GetComponent<SpriteRenderer>() : gameObject.AddComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -51,7 +51,7 @@ public class Building : MonoBehaviour, IleaderBoardMember, IVisabilityCheck
             button.interactable = false;
         }
     }
-   
+
     private void SetChartColor()
     {
         foreach (Transform child in transform)
@@ -106,9 +106,9 @@ public class Building : MonoBehaviour, IleaderBoardMember, IVisabilityCheck
 
     public void CheckVisibility()
     {
-        if (SearchBox.Instance.SearchList.Contains(this))
+        if (SearchBox.Instance.SearchList.Find(b => b == this) != null)
         {
-            if (m_Renderer.isVisible)
+            if (m_Renderer && m_Renderer.isVisible)
             {
                 return;
             }
@@ -119,7 +119,7 @@ public class Building : MonoBehaviour, IleaderBoardMember, IVisabilityCheck
         }
         else
         {
-            if (m_Renderer.isVisible)
+            if (m_Renderer && m_Renderer.isVisible)
             {
                 SearchBox.Instance.SearchList.Add(this);
             }
