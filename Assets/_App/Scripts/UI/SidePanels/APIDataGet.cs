@@ -65,14 +65,14 @@ public class APIDataGet : MonoBehaviour
     {
         if (APIResponseManager.instance.getTankStats != null)
         {
-            buildingCanvasVariables.fogThickness.text = APIResponseManager.instance.getTankStats.data[0].latestCloudDerivedTelemetry.ft.ToString();
-            buildingCanvasVariables.fogVolume.text = APIResponseManager.instance.getTankStats.data[0].latestCloudDerivedTelemetry.fv.ToString();
-            buildingCanvasVariables.wasteWaterLevel.text = APIResponseManager.instance.getTankStats.data[0].latestCloudDerivedTelemetry.wwl.ToString();
-            buildingCanvasVariables.wasteWaterVolume.text = APIResponseManager.instance.getTankStats.data[0].latestCloudDerivedTelemetry.wwv.ToString();
-            buildingCanvasVariables.batteryLevel.text = APIResponseManager.instance.getTankStats.data[0].latestCloudDerivedTelemetry.bl.ToString();
-            buildingCanvasVariables.lastCleanedOn.text = APIResponseManager.instance.getTankStats.data[0].latestState.cleaningState.ltc_ts.ToString();
-            buildingCanvasVariables.nextCleanedOn.text = APIResponseManager.instance.getTankStats.data[0].latestState.cleaningState.nsn_ts.ToString();
-            buildingCanvasVariables.coverageState.text = APIResponseManager.instance.getTankStats.data[0].latestMeasuredTelemetry.cv.ToString();
+            //buildingCanvasVariables.fogThickness.text = APIResponseManager.instance.getTankStats.data[0].latestCloudDerivedTelemetry.ft.ToString();
+            //buildingCanvasVariables.fogVolume.text = APIResponseManager.instance.getTankStats.data[0].latestCloudDerivedTelemetry.fv.ToString();
+            //buildingCanvasVariables.wasteWaterLevel.text = APIResponseManager.instance.getTankStats.data[0].latestCloudDerivedTelemetry.wwl.ToString();
+            //buildingCanvasVariables.wasteWaterVolume.text = APIResponseManager.instance.getTankStats.data[0].latestCloudDerivedTelemetry.wwv.ToString();
+            //buildingCanvasVariables.batteryLevel.text = APIResponseManager.instance.getTankStats.data[0].latestCloudDerivedTelemetry.bl.ToString();
+            //buildingCanvasVariables.lastCleanedOn.text = APIResponseManager.instance.getTankStats.data[0].latestState.cleaningState.ltc_ts.ToString();
+            //buildingCanvasVariables.nextCleanedOn.text = APIResponseManager.instance.getTankStats.data[0].latestState.cleaningState.nsn_ts.ToString();
+            //buildingCanvasVariables.coverageState.text = APIResponseManager.instance.getTankStats.data[0].latestMeasuredTelemetry.cv.ToString();
         }
       
     }
