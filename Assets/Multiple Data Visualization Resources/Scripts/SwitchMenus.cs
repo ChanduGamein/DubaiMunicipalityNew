@@ -24,7 +24,7 @@ public class SwitchMenus : MonoBehaviour
         menu.SetActive(true);
         if (hasUnderline)
         {
-            underline.transform.position = new Vector3(this.transform.position.x, underline.transform.position.y, underline.transform.position.y);
+            underline.transform.position = new Vector3(this.transform.position.x, underline.transform.position.y, underline.transform.position.z);
         }
     }
 }
