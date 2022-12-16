@@ -330,6 +330,10 @@ public class MainUICanvas : MonoBehaviour
                 AssignBuildingPoint(54);
                 AssignBuildingName(buildingName);
                 break;
+            case "Holiday_Inn_Express_Hotel":
+                AssignBuildingPoint(55);
+                AssignBuildingName(buildingName);
+                break;
             default:
                 break;
         }
