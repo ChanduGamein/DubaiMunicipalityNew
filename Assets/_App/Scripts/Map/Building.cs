@@ -18,6 +18,7 @@ public class Building : MonoBehaviour, IleaderBoardMember, IVisabilityCheck
     private SpriteRenderer m_Renderer;
     private Image img;
     private Button button;
+    [SerializeField] bool isBuilding=false;
     private void Awake()
     {
         m_Renderer = GetComponent<SpriteRenderer>() ? GetComponent<SpriteRenderer>() : gameObject.AddComponent<SpriteRenderer>();
@@ -38,6 +39,7 @@ public class Building : MonoBehaviour, IleaderBoardMember, IVisabilityCheck
         {
             SetChartColor();
         }
+        if(!isBuilding)
         SetName();
         SearchBox.Instance.visibles.Add(this);
 
@@ -74,6 +76,7 @@ public class Building : MonoBehaviour, IleaderBoardMember, IVisabilityCheck
             go.transform.localPosition = new Vector2(55, 70);
             name = go.AddComponent<TextMeshProUGUI>();
             go.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+
         }
         string n = "";
         if (buildingData.name.Length > 15)
