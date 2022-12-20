@@ -546,8 +546,16 @@ public class MainUICanvas : MonoBehaviour
                 AssignBuildingPoint(108);
                 AssignBuildingName(buildingName);
                 break;
-            case "Light_star_cafeteria":
+            case "infinity_café_lounge":
                 AssignBuildingPoint(109);
+                AssignBuildingName(buildingName);
+                break;
+            case "KOYLA_LONGUE_AND_CAFE_25_2899_55_3647_and_MEHFIL_CAFFE_AND_LONGUE":
+                AssignBuildingPoint(110);
+                AssignBuildingName(buildingName);
+                break;
+            case "Light_star_cafeteria":
+                AssignBuildingPoint(111);
                 AssignBuildingName(buildingName);
                 break;
             default:
