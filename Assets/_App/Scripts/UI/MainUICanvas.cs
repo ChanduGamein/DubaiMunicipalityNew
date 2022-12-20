@@ -546,6 +546,10 @@ public class MainUICanvas : MonoBehaviour
                 AssignBuildingPoint(108);
                 AssignBuildingName(buildingName);
                 break;
+            case "Light_star_cafeteria":
+                AssignBuildingPoint(109);
+                AssignBuildingName(buildingName);
+                break;
             default:
                 break;
         }
