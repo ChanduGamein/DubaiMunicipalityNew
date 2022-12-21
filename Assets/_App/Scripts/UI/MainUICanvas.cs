@@ -342,7 +342,7 @@ public class MainUICanvas : MonoBehaviour
                 AssignBuildingPoint(57);
                 AssignBuildingName(buildingName);
                 break;
-             case "AL_Fahidi_Cafeteria":
+            case "AL_Fahidi_Cafeteria":
                 AssignBuildingPoint(58);
                 AssignBuildingName(buildingName);
                 break;
@@ -357,7 +357,7 @@ public class MainUICanvas : MonoBehaviour
             case "Al_Khail_Kitchen":
                 AssignBuildingPoint(61);
                 AssignBuildingName(buildingName);
-                break; 
+                break;
             case "Al_Khaima_Kitchen_LLC":
                 AssignBuildingPoint(62);
                 AssignBuildingName(buildingName);
@@ -381,7 +381,7 @@ public class MainUICanvas : MonoBehaviour
             case "Al_Surur_Traditional_Kitchen":
                 AssignBuildingPoint(67);
                 AssignBuildingName(buildingName);
-                break; 
+                break;
             case "Alessa_Cafeteria_Co":
                 AssignBuildingPoint(68);
                 AssignBuildingName(buildingName);
@@ -393,7 +393,7 @@ public class MainUICanvas : MonoBehaviour
             case "Amber_Darbar_Restaurant":
                 AssignBuildingPoint(70);
                 AssignBuildingName(buildingName);
-                break; 
+                break;
             case "Arena_Shisha_Terrace":
                 AssignBuildingPoint(71);
                 AssignBuildingName(buildingName);
@@ -441,11 +441,11 @@ public class MainUICanvas : MonoBehaviour
             case "City_way_coffee_shop_cafeteria":
                 AssignBuildingPoint(82);
                 AssignBuildingName(buildingName);
-                break; 
+                break;
             case "Dar_al_rafa":
                 AssignBuildingPoint(83);
                 AssignBuildingName(buildingName);
-                break; 
+                break;
             case "Dardasha_Cafe":
                 AssignBuildingPoint(84);
                 AssignBuildingName(buildingName);
@@ -533,7 +533,7 @@ public class MainUICanvas : MonoBehaviour
             case "Kitopi_Catering_Services_Kitchen":
                 AssignBuildingPoint(105);
                 AssignBuildingName(buildingName);
-                break; 
+                break;
             case "Kosheli_Restaurant___Ice_Cream_Corner":
                 AssignBuildingPoint(106);
                 AssignBuildingName(buildingName);
