@@ -7,6 +7,7 @@ using UnityEngine;
 public class BuildingsSO : ScriptableObject
 {
     public string name;
+    public string buildingID;
     public Material material;
     public float nCoordinate;
     public float eCoordinate;
