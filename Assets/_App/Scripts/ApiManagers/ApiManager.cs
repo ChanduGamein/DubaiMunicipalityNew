@@ -26,12 +26,13 @@ public class ApiManager : MonoBehaviour
     string Root_URL_getEnrolledTankStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/enrolledtanks?pageSize=1000000";
     string Root_URL_getTankConfigurations = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tankconfigurations?pageSize=1000000";
     string Root_URL_getHierarchywisemonthlyComplianceScore = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/hierarchywisemonthlycompliancescore?";
-    string Root_URL_gettanksmonthlycompliancescore = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tanksmonthlycompliancescore?pageSize=100000&year=2022";
-    string Root_URL_tanksyearlycompliancescore = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tanksyearlycompliancescore?pageSize=100000&year=2022";
+    string Root_URL_gettanksmonthlycompliancescore = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tanksmonthlycompliancescore?pageSize=1000000&year=2022";
+    string Root_URL_tanksyearlycompliancescore = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tanksyearlycompliancescore?pageSize=1000000&year=2022";
 
     string Root_URL_getTelemetryHistory = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/telemetry?pageSize=1000000&lastNSec=86400";
+    string Root_URL_getAlarms = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/alarms?pageSize=50&lastNSec=8640000";
 
-
+    
     public Text month, year;
 
     private void Awake()
@@ -73,6 +74,8 @@ public class ApiManager : MonoBehaviour
         APIRequest(Root_URL_getTankConfigurations, AccessToken, null, onGetTankConfigurationSuccess, true, false);
 
         APIRequest(Root_URL_getTelemetryHistory, AccessToken, null, onGetTelemetryHistory, true, false);
+
+        APIRequest(Root_URL_getAlarms, AccessToken, null, onGetAlarmsData, true, false);
 
 
         // Updating the UI
@@ -183,6 +186,15 @@ public class ApiManager : MonoBehaviour
     void onGetTelemetryHistory(string response, string responseCode)
     {
         JsonUtility.FromJsonOverwrite(response, responseHandler.getTelemetryHistory);
+        Debug.Log(response);
+        if (responseCode == "200")
+        {
+
+        }
+    }
+    void onGetAlarmsData(string response, string responseCode)
+    {
+        JsonUtility.FromJsonOverwrite(response, responseHandler.getAlarmsData);
         Debug.Log(response);
         if (responseCode == "200")
         {
