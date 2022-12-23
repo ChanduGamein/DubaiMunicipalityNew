@@ -19,9 +19,16 @@ public class APIResponseManager : MonoBehaviour
     public GetConnectivityStats getConnectivityStats;
     public GetSensorStats getSensorStats;
     public GetTankStats getTankStats;
-    public GetComplianceScore getComplianceScoreStats;
+    public Gethierarchywisemonthlycompliancescore gethierarchywisemonthlycompliancescore;
+    public Gettanksmonthlycompliancescore gettanksmonthlycompliancescore;
+    public Gettanksyearlycompliancescore gettanksyearlycompliancescore;
 
     public GetEnrolledTankStats getEnrolledTankStats;
+    public GetTankConfigurations getTankConfigurations;
+
+    public GetTelemetryHistory getTelemetryHistory;
+
+
 
     #endregion
 

@@ -18,13 +18,20 @@ public class ApiManager : MonoBehaviour
     // public static string BASE_URL = "https://rabbithole-apim-dev.azure-api.net/core/";
     string urlRequest = "https://50.17.146.144/api/user/detail/save";
     string Root_URL_getDashboardStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/dashboardstatistics";
-    string Root_URL_getBatteryStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/dashboardstatistics/batterystatistics";
-    string Root_URL_getCleaningStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/dashboardstatistics/cleaningstatistics";
-    string Root_URL_getConnectivityStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/dashboardstatistics/connectivitystatistics";
-    string Root_URL_getSensorStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/dashboardstatistics/sensorstatistics";
-    string Root_URL_getTankStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tanksstate";
-    string Root_URL_getComplianceScoreStats;
-    string Root_URL_getEnrolledTankStats =  "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/enrolledtanks";
+    string Root_URL_getBatteryStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/dashboardstatistics/batterystatistics?pageSize=1000000";
+    string Root_URL_getCleaningStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/dashboardstatistics/cleaningstatistics?pageSize=1000000";
+    string Root_URL_getConnectivityStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/dashboardstatistics/connectivitystatistics?pageSize=1000000";
+    string Root_URL_getSensorStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/dashboardstatistics/sensorstatistics?pageSize=1000000";
+    string Root_URL_getTankStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tanksstate?pageSize=1000000";
+    string Root_URL_getEnrolledTankStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/enrolledtanks?pageSize=1000000";
+    string Root_URL_getTankConfigurations = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tankconfigurations?pageSize=1000000";
+    string Root_URL_getHierarchywisemonthlyComplianceScore = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/hierarchywisemonthlycompliancescore?";
+    string Root_URL_gettanksmonthlycompliancescore = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tanksmonthlycompliancescore?pageSize=100000&year=2022";
+    string Root_URL_tanksyearlycompliancescore = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tanksyearlycompliancescore?pageSize=100000&year=2022";
+
+    string Root_URL_getTelemetryHistory = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/telemetry?pageSize=1000000&lastNSec=86400";
+
+
     public Text month, year;
 
     private void Awake()
@@ -40,11 +47,14 @@ public class ApiManager : MonoBehaviour
         month.text = DateTime.Now.Month.ToString();
         year.text = DateTime.Now.Year.ToString();
 
+
     }
 
     public void SelectDate()
     {
-        Root_URL_getComplianceScoreStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/septic/hierarchywisemonthlycompliancescore?year=" + year.text + "&monthno=" + month.text;
+        Debug.Log(year.text);
+        // give required year here
+        Root_URL_getHierarchywisemonthlyComplianceScore = Root_URL_getHierarchywisemonthlyComplianceScore + "year="+ year.text ;
     }
     public void DashboardStats()
     {
@@ -55,8 +65,14 @@ public class ApiManager : MonoBehaviour
         APIRequest(Root_URL_getConnectivityStats, AccessToken, null, onGetConnectivityStatsSuccess, true, false);
         APIRequest(Root_URL_getSensorStats, AccessToken, null, onGetSensorStatsSuccess, true, false);
         APIRequest(Root_URL_getTankStats, AccessToken, null, onGetTankStatsSuccess, true, false);
-        APIRequest(Root_URL_getComplianceScoreStats, AccessToken, null, onGetComplianceScoreStatsSuccess, true, false);
+        APIRequest(Root_URL_getHierarchywisemonthlyComplianceScore, AccessToken, null, onGetComplianceScoreStatsSuccess, true, false);
+        APIRequest(Root_URL_gettanksmonthlycompliancescore, AccessToken, null, onGetMonthlyComplianceScoreStatsSuccess, true, false);
+        APIRequest(Root_URL_tanksyearlycompliancescore, AccessToken, null, onGetYearlyComplianceScoreStatsSuccess, true, false);
+
         APIRequest(Root_URL_getEnrolledTankStats, AccessToken, null, onGetEnrolledTankStatsSuccess, true, false);
+        APIRequest(Root_URL_getTankConfigurations, AccessToken, null, onGetTankConfigurationSuccess, true, false);
+
+        APIRequest(Root_URL_getTelemetryHistory, AccessToken, null, onGetTelemetryHistory, true, false);
 
 
         // Updating the UI
@@ -118,7 +134,27 @@ public class ApiManager : MonoBehaviour
     }
     void onGetComplianceScoreStatsSuccess(string response, string responseCode)
     {
-        JsonUtility.FromJsonOverwrite(response, responseHandler.getComplianceScoreStats);
+        JsonUtility.FromJsonOverwrite(response, responseHandler.gethierarchywisemonthlycompliancescore);
+        Debug.Log(response);
+        if (responseCode == "200")
+        {
+
+        }
+    } 
+    
+    void onGetMonthlyComplianceScoreStatsSuccess(string response, string responseCode)
+    {
+        JsonUtility.FromJsonOverwrite(response, responseHandler.gettanksmonthlycompliancescore);
+        Debug.Log(response);
+        if (responseCode == "200")
+        {
+
+        }
+    }  
+    
+    void onGetYearlyComplianceScoreStatsSuccess(string response, string responseCode)
+    {
+        JsonUtility.FromJsonOverwrite(response, responseHandler.gettanksyearlycompliancescore);
         Debug.Log(response);
         if (responseCode == "200")
         {
@@ -129,6 +165,24 @@ public class ApiManager : MonoBehaviour
     void onGetEnrolledTankStatsSuccess(string response, string responseCode)
     {
         JsonUtility.FromJsonOverwrite(response, responseHandler.getEnrolledTankStats);
+        Debug.Log(response);
+        if (responseCode == "200")
+        {
+
+        }
+    } 
+    void onGetTankConfigurationSuccess(string response, string responseCode)
+    {
+        JsonUtility.FromJsonOverwrite(response, responseHandler.getTankConfigurations);
+        Debug.Log(response);
+        if (responseCode == "200")
+        {
+
+        }
+    }
+    void onGetTelemetryHistory(string response, string responseCode)
+    {
+        JsonUtility.FromJsonOverwrite(response, responseHandler.getTelemetryHistory);
         Debug.Log(response);
         if (responseCode == "200")
         {

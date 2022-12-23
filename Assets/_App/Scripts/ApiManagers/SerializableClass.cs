@@ -224,35 +224,40 @@ public class SensorState
 }
 // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
 [Serializable]
-public class GetComplianceScore
+public class hierarchywisemonthlycompliancescore
 {
-    public List<Data> data;
-    public YearlySummaryData yearlySummaryData;
-    public TotalData totalData;
+    public int totalTanks ;
+    public int monthNo ;
+    public string monthName ;
+    public double complianceScore ;
+    public long fogVolumeCollected ;
+    public long wasteWaterVolumeCollected ;
 }
 [Serializable]
-public class Data
+public class Gethierarchywisemonthlycompliancescore
 {
-    public int totalTanks;
-    public int monthNo;
-    public string monthName;
-    public double complianceScore;
-    public int wasteWaterVolumeCollected;
+    public List<hierarchywisemonthlycompliancescore> data ;
+    public YearlySummaryData yearlySummaryData ;
+    public TotalData totalData ;
 }
 [Serializable]
 public class TotalData
 {
-    public int totalTanks;
-    public double complianceScore;
-    public long wasteWaterVolumeCollected;
+    public int totalTanks ;
+    public double complianceScore ;
+    public long fogVolumeCollected ;
+    public long wasteWaterVolumeCollected ;
 }
 [Serializable]
 public class YearlySummaryData
 {
-    public int totalTanks;
-    public double complianceScore;
-    public long wasteWaterVolumeCollected;
+    public int totalTanks ;
+    public double complianceScore ;
+    public long fogVolumeCollected ;
+    public long wasteWaterVolumeCollected ;
 }
+
+
 
 [Serializable]
 // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
@@ -375,23 +380,148 @@ public class TankInfo
     public int widthInMm;
     public int depthInMm;
     public int airLayerReferenceValue;
-    public int? totalBottomSensors;
-    public int? outletPipeDiameterInMm;
-    public int? maxBottomSensor1Reading;
-    public int? maxBottomSensor2Reading;
-    public int? maxBottomSensor3Reading;
-    public int? bottomSensor1Offset;
-    public int? bottomSensor2Offset;
-    public int? bottomSensor3Offset;
-    public int? bottomSensor1ToOutletBottom;
-    public int? bottomSensor2ToOutletBottom;
-    public int? bottomSensor3ToOutletBottom;
-    public int? bottomSensor1ToOutletMiddle;
-    public int? bottomSensor2ToOutletMiddle;
-    public int? bottomSensor3ToOutletMiddle;
-    public int? bottomSensor1ToOutletTop;
-    public int? bottomSensor2ToOutletTop;
-    public int? bottomSensor3ToOutletTop;
+    public int totalBottomSensors;
+    public int outletPipeDiameterInMm;
+    public int maxBottomSensor1Reading;
+    public int maxBottomSensor2Reading;
+    public int maxBottomSensor3Reading;
+    public int bottomSensor1Offset;
+    public int bottomSensor2Offset;
+    public int bottomSensor3Offset;
+    public int bottomSensor1ToOutletBottom;
+    public int bottomSensor2ToOutletBottom;
+    public int bottomSensor3ToOutletBottom;
+    public int bottomSensor1ToOutletMiddle;
+    public int bottomSensor2ToOutletMiddle;
+    public int bottomSensor3ToOutletMiddle;
+    public int bottomSensor1ToOutletTop;
+    public int bottomSensor2ToOutletTop;
+    public int bottomSensor3ToOutletTop;
+}
+
+// Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+[Serializable]
+public class TankConfiguration
+{
+    public string tid ;
+    public int fogThicknessThreshold ;
+    public int fogTolerance ;
+    public int compliancePeriodInHrs ;
+    public int tankCleaningScheduleInDays ;
+    public int defaultOverflowThresholdInMm ;
+    public string lid ;
+}
+[Serializable]
+public class GetTankConfigurations
+{
+    public int pageIndex ;
+    public int pageSize ;
+    public int totalCount ;
+    public bool hasNext ;
+    public bool hasPrevious ;
+    public List<TankConfiguration> data ;
+}
+[Serializable]
+// Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+public class Tanksmonthlycompliancescore
+{
+    public string tid ;
+    public List<MonthlyComplianceDetail> monthlyComplianceDetails ;
+}
+[Serializable]
+public class MonthlyComplianceDetail
+{
+    public int monthNo ;
+    public string monthName ;
+    public double complianceScore ;
+    public long fogVolumeCollected ;
+    public long wasteWaterVolumeCollected ;
+}
+[Serializable]
+public class Gettanksmonthlycompliancescore
+{
+    public int pageIndex ;
+    public int pageSize ;
+    public int totalCount ;
+    public bool hasNext ;
+    public bool hasPrevious ;
+    public List<Tanksmonthlycompliancescore> data ;
+}
+
+// Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+[Serializable]
+public class Tanksyearlycompliancescore
+{
+    public string tid ;
+    public List<YearlyComplianceDetail> yearlyComplianceDetails ;
+}
+[Serializable]
+public class Gettanksyearlycompliancescore
+{
+    public int pageIndex ;
+    public int pageSize ;
+    public int totalCount ;
+    public bool hasNext ;
+    public bool hasPrevious ;
+    public List<Tanksyearlycompliancescore> data ;
+}
+[Serializable]
+public class YearlyComplianceDetail
+{
+    public int year ;
+    public double complianceScore ;
+    public object fogVolumeCollected ;
+    public object wasteWaterVolumeCollected ;
+}
+
+// Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+[Serializable]
+public class TelemetryHistory
+{
+    public string tId ;
+    public string lId ;
+    public string messageId ;
+    public object messageDate ;
+    public object iotHubDate ;
+    public object createdDate ;
+    public Measured measured ;
+    public Derived derived ;
+}
+[Serializable]
+public class Derived
+{
+    public int bl ;
+    public int tv ;
+    public int fv ;
+    public int wwv ;
+    public int wwl ;
+    public int bl_corr ;
+    public int bsr1 ;
+    public int bssr1 ;
+    public int ft ;
+    public int bsr ;
+}
+[Serializable]
+public class Measured
+{
+    public List<int> bsrsp1 ;
+    public List<object> bsrsp2 ;
+    public List<object> bsrsp3 ;
+    public int bsr1 ;
+    public double cv ;
+    public int bl ;
+    public bool s1 ;
+    public bool sri ;
+}
+[Serializable]
+public class GetTelemetryHistory
+{
+    public int pageIndex ;
+    public int pageSize ;
+    public int totalCount ;
+    public bool hasNext ;
+    public bool hasPrevious ;
+    public List<TelemetryHistory> data ;
 }
 
 
