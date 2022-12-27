@@ -524,6 +524,153 @@ public class GetTelemetryHistory
     public List<TelemetryHistory> data ;
 }
 
+// Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+[Serializable]
+public class Bsr1
+{
+    public object time ;
+    public int value ;
+    public bool isInvalid ;
+    public bool isOverflow ;
+    public bool isOutofCurve ;
+}
+[Serializable]
+public class Bsr2
+{
+    public object time ;
+    public int value ;
+    public bool isInvalid ;
+    public bool isOverflow ;
+    public bool isOutofCurve ;
+}
+[Serializable]
+public class Bsr3
+{
+    public object time ;
+    public bool isInvalid ;
+    public bool isOverflow ;
+    public bool isOutofCurve ;
+}
+[Serializable]
+public class CleaningRequestStateAlarms
+{
+    public bool is_cro ;
+    public long cro_ts ;
+    public string cro_rsn ;
+    public long etc_ts ;
+    public string cro_id ;
+}
+[Serializable]
+public class CleaningStateAlarms
+{
+    public bool is_tc ;
+    public long ltc_ts ;
+    public bool is_tcwcp ;
+    public bool is_tcacpn ;
+    public bool is_stc ;
+    public long nsn_ts ;
+    public long nsc_ts ;
+    public long lstc_ts ;
+    public bool is_stcwcp ;
+}
+[Serializable]
+public class ConnectivityStateAlarms
+{
+    public bool is_off ;
+    public object off_ts ;
+    public object offd_ts ;
+    public bool is_dm ;
+    public object dm_ts ;
+    public object dmd_ts ;
+    public long? offn_ts ;
+}
+[Serializable]
+public class AlarmsData
+{
+    public List<Bsr1> bsr1 ;
+    public List<Bsr2> bsr2 ;
+    public List<Bsr3> bsr3 ;
+    public string tid ;
+    public string lid ;
+    public string alarmId ;
+    public string code ;
+    public string severity ;
+    public string message ;
+    public object alarmDate ;
+    public TelemetryDetailsAlarms telemetryDetails ;
+    public TankStateAlarms tankState ;
+    public MetaDataAlarms metaData ;
+}
+[Serializable]
+public class DerivedAlarms
+{
+    public int bl ;
+    public int tv ;
+    public int fv ;
+    public int wwv ;
+    public int wwl ;
+    public int bl_corr ;
+    public int bsr1 ;
+    public int bssr1 ;
+    public int ft ;
+    public int bsr ;
+}
+[Serializable]
+public class MeasuredAlarms
+{
+    public List<int> bsrsp1 ;
+    public List<object> bsrsp2 ;
+    public List<object> bsrsp3 ;
+    public int bsr1 ;
+    public double cv ;
+    public int bl ;
+    public bool s1 ;
+    public bool sri ;
+}
+[Serializable]
+public class MetaDataAlarms
+{
+    public AlarmsData data ;
+    public int zeroCount ;
+    public int invalidCount ;
+    public int overflowCount ;
+    public int outOfCurveCount ;
+}
+[Serializable]
+public class GetAlarmsData
+{
+    public int pageIndex ;
+    public int pageSize ;
+    public int totalCount ;
+    public bool hasNext ;
+    public bool hasPrevious ;
+    public List<AlarmsData> data ;
+}
+[Serializable]
+public class SensorStateAlarms
+{
+    public long s1d_ts ;
+    public long s2d_ts ;
+    public long s3d_ts ;
+}
+[Serializable]
+public class TankStateAlarms
+{
+    public ConnectivityStateAlarms connectivityState ;
+    public CleaningStateAlarms cleaningState ;
+    public CleaningRequestStateAlarms cleaningRequestState ;
+    public SensorStateAlarms sensorState ;
+}
+[Serializable]
+public class TelemetryDetailsAlarms
+{
+    public string telemetryId ;
+    public object telemetryDate ;
+    public MeasuredAlarms measured ;
+    public DerivedAlarms derived ;
+}
+
+
 
 
 

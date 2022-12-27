@@ -27,6 +27,7 @@ public class APIResponseManager : MonoBehaviour
     public GetTankConfigurations getTankConfigurations;
 
     public GetTelemetryHistory getTelemetryHistory;
+    public GetAlarmsData getAlarmsData;
 
 
 

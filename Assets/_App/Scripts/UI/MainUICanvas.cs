@@ -896,8 +896,10 @@ public class MainUICanvas : MonoBehaviour
     public void SidePanelToggle()
     {
         SidePanelTogglebool = !SidePanelTogglebool;
+
         if (SidePanelTogglebool)
         {
+            ApiManager.instance.DashboardStats();
             SidePanelImg.sprite = SidePanelToggleSprites[1];
         }
         else
