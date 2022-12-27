@@ -8,6 +8,7 @@ using UnityEngine.Networking;
 using System.Text;
 using TMPro;
 using UnityEngine.UI;
+using System.Web;
 
 public class ApiManager : MonoBehaviour
 {
@@ -32,9 +33,9 @@ public class ApiManager : MonoBehaviour
     string Root_URL_getTelemetryHistory = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/telemetry?pageSize=1000000&lastNSec=86400";
     string Root_URL_getAlarms = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/alarms?pageSize=50&lastNSec=8640000";
 
-    
+ //   [SerializeField] GameObject DistrictNameObject;
     public Text month, year;
-
+    const string LBrace = "{", RBrace = "}", Colon = ": ", City = "\"city\"", Dubai="\"Dubai\"",comma=",",district="\"district\"",area="\"area\"";
     private void Awake()
     {
         if (instance == null)
@@ -48,7 +49,14 @@ public class ApiManager : MonoBehaviour
         month.text = DateTime.Now.Month.ToString();
         year.text = DateTime.Now.Year.ToString();
 
+        //string BaseDubai = LBrace+City+Colon+Dubai+comma+district+Colon;
+        //BaseDubai += DistrictNameObject.name+ RBrace;
+        //Debug.Log(DistrictNameObject.name);
+        //Debug.Log(BaseDubai);
+        //Debug.Log(Uri.EscapeDataString(BaseDubai));
+        //Root_URL_getDashboardStats += Uri.EscapeDataString(BaseDubai);
 
+       
     }
 
     public void SelectDate()
