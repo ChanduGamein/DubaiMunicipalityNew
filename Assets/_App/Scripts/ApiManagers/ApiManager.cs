@@ -8,6 +8,7 @@ using UnityEngine.Networking;
 using System.Text;
 using TMPro;
 using UnityEngine.UI;
+using System.Web;
 
 public class ApiManager : MonoBehaviour
 {
@@ -32,9 +33,11 @@ public class ApiManager : MonoBehaviour
     string Root_URL_getTelemetryHistory = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/telemetry?pageSize=1000000&lastNSec=86400";
     string Root_URL_getAlarms = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/alarms?pageSize=50&lastNSec=8640000";
 
-    
+   [SerializeField] GameObject DistrictNameObject, SubDistrictNameObject;
     public Text month, year;
-
+    const string LBrace = "{", RBrace = "}", Colon = ": ", City = "\"city\"", Dubai="\"Dubai\"",comma=",",district="\"district\"",area="\"area\"", quote = "\"";
+    const string hierarchy = "?hierarchy=";
+    string BaseDubai;
     private void Awake()
     {
         if (instance == null)
@@ -48,6 +51,14 @@ public class ApiManager : MonoBehaviour
         month.text = DateTime.Now.Month.ToString();
         year.text = DateTime.Now.Year.ToString();
 
+         BaseDubai = LBrace + City + Colon + Dubai + comma + district + Colon;
+        //BaseDubai += quote+ DistrictNameObject.name + quote+ RBrace;
+        //Debug.Log(BaseDubai);
+        //Debug.Log(Uri.EscapeDataString(BaseDubai));
+        //Root_URL_getDashboardStats += Uri.EscapeDataString(BaseDubai);
+
+        DashboardStatsForSubDistricts(DistrictNameObject.name, SubDistrictNameObject.name);
+
 
     }
 
@@ -55,8 +66,9 @@ public class ApiManager : MonoBehaviour
     {
         Debug.Log(year.text);
         // give required year here
-        Root_URL_getHierarchywisemonthlyComplianceScore = Root_URL_getHierarchywisemonthlyComplianceScore + "year="+ year.text ;
+        Root_URL_getHierarchywisemonthlyComplianceScore = Root_URL_getHierarchywisemonthlyComplianceScore + "?year="+ year.text ;
     }
+    // this is for complete Dubai data
     public void DashboardStats()
     {
         Debug.Log("DashboardStats");
@@ -80,6 +92,24 @@ public class ApiManager : MonoBehaviour
 
         // Updating the UI
         APIDataGet.instance.SetApiDataToUI();
+    }
+    public void DashboardStatsForDistricts(string DistrictName)
+    {
+        string url;
+        url= BaseDubai + quote + DistrictName + quote + RBrace;
+        Debug.Log(url);
+        Debug.Log(Uri.EscapeDataString(url));
+        APIRequest(Root_URL_getDashboardStats + hierarchy + Uri.EscapeDataString(url), AccessToken, null, OnGetDashboardStatsSuccess, true, false);
+
+    }
+    public void DashboardStatsForSubDistricts(string DistrictName,string SubDistrictName)
+    {
+        string url;
+        url = BaseDubai + quote + DistrictName + quote + comma + area+ Colon + quote + SubDistrictName + quote + RBrace;
+        Debug.Log(url);
+        Debug.Log(Uri.EscapeDataString(url));
+        APIRequest(Root_URL_getDashboardStats+ hierarchy+ Uri.EscapeDataString(url), AccessToken, null, OnGetDashboardStatsSuccess, true, false);
+
     }
     void OnGetDashboardStatsSuccess(string response, string responseCode)
     {
