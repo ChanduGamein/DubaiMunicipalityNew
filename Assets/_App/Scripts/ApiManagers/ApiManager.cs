@@ -26,18 +26,34 @@ public class ApiManager : MonoBehaviour
     string Root_URL_getTankStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tanksstate?pageSize=1000000";
     string Root_URL_getEnrolledTankStats = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/enrolledtanks?pageSize=1000000";
     string Root_URL_getTankConfigurations = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tankconfigurations?pageSize=1000000";
-    string Root_URL_getHierarchywisemonthlyComplianceScore = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/hierarchywisemonthlycompliancescore?";
-    string Root_URL_gettanksmonthlycompliancescore = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tanksmonthlycompliancescore?pageSize=1000000&year=2022";
-    string Root_URL_tanksyearlycompliancescore = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tanksyearlycompliancescore?pageSize=1000000&year=2022";
+    string Root_URL_getHierarchywisemonthlyComplianceScore = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/hierarchywisemonthlycompliancescore";
+    string Root_URL_gettanksmonthlycompliancescore = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tanksmonthlycompliancescore";
+    string Root_URL_tanksyearlycompliancescore = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/tanksyearlycompliancescore?pageSize=1000000";
 
     string Root_URL_getTelemetryHistory = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/telemetry?pageSize=1000000&lastNSec=86400";
-    string Root_URL_getAlarms = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/alarms?pageSize=50&lastNSec=8640000";
+    string Root_URL_getAlarms = "https://stgapigw-vip.dm.ae/gateway/DMAPIMIntegration/fogtrap/alarms";
 
    [SerializeField] GameObject DistrictNameObject, SubDistrictNameObject;
     public Text month, year;
     const string LBrace = "{", RBrace = "}", Colon = ": ", City = "\"city\"", Dubai="\"Dubai\"",comma=",",district="\"district\"",area="\"area\"", quote = "\"";
-    const string hierarchy = "?hierarchy=";
-    string BaseDubai;
+    const string hierarchy = "hierarchy=";
+    const string pageIndex = "pageIndex=";
+    const string pageSize = "pageSize=";
+    const string fromDate = "fromDate=";
+    const string toDate = "toDate=";
+    const string lastNSec = "lastNSec=";
+    const string tankId = "tankId=";
+    const string lid = "lid=";
+    const string year2 = "year=";
+    const string monthno = "monthno=";
+    const string lastnmonths = "lastnmonths=";
+    const string assettype = "assettype=";
+    const string search = "search=";
+    int SelectedYear=2022, SelectedMonth=12,SelectedDate=1,LastNseconds=8640000;
+    int SelectedYear_From = 2022, SelectedMonth_From = 12, SelectedDate_From = 1;
+    int SelectedYear_To = 2022, SelectedMonth_To = 12, SelectedDate_To = 1;
+    string OnlyDubai,BaseDubai;
+    long FromdateEpoch, ToDateEpoch;
     private void Awake()
     {
         if (instance == null)
@@ -48,30 +64,63 @@ public class ApiManager : MonoBehaviour
     }
     private void Start()
     {
-        month.text = DateTime.Now.Month.ToString();
-        year.text = DateTime.Now.Year.ToString();
+        //month.text = DateTime.Now.Month.ToString();
+        //year.text = DateTime.Now.Year.ToString();
+        OnlyDubai = LBrace + City + Colon + Dubai+ RBrace;
+        BaseDubai = LBrace + City + Colon + Dubai + comma + district + Colon;
+        Debug.Log(OnlyDubai);
 
-         BaseDubai = LBrace + City + Colon + Dubai + comma + district + Colon;
         //BaseDubai += quote+ DistrictNameObject.name + quote+ RBrace;
         //Debug.Log(BaseDubai);
         //Debug.Log(Uri.EscapeDataString(BaseDubai));
         //Root_URL_getDashboardStats += Uri.EscapeDataString(BaseDubai);
 
+
+        //Debug.Log(DateTimeOffset.Now.ToUnixTimeSeconds());
+        //var epoch = (DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds;
+        //Debug.Log((int)epoch);
+
+        // Debug.Log(DateTime.UtcNow); 
+
+        //DateTimeOffset dateTimeOffSet = DateTimeOffset.ParseExact("14/03/2014 00:00:00", "dd/MM/yyyy HH:mm:ss", new CultureInfo("en-US"));
+        //long date = dateTimeOffSet.ToUnixTimeSeconds();
+        //Debug.Log(date);
+
+        //DateTimeOffset dateTimeOffSet2 = DateTimeOffset.FromUnixTimeMilliseconds(1581984000000);
+        //DateTime dateTime = dateTimeOffSet2.DateTime;
+        //Debug.Log(dateTime);
+
         DashboardStatsForSubDistricts(DistrictNameObject.name, SubDistrictNameObject.name);
-
-
     }
 
     public void SelectDate()
     {
         Debug.Log(year.text);
         // give required year here
-        Root_URL_getHierarchywisemonthlyComplianceScore = Root_URL_getHierarchywisemonthlyComplianceScore + "?year="+ year.text ;
+       // Root_URL_getHierarchywisemonthlyComplianceScore = Root_URL_getHierarchywisemonthlyComplianceScore + "?year="+ year.text ;
+    }
+    void FromDate()
+    {
+        DateTimeOffset dateTimeOffSet = DateTimeOffset.ParseExact(SelectedYear_From.ToString()+"/"+ SelectedMonth_From.ToString() + "/" + SelectedDate_From.ToString() + "00:00:00", "dd/MM/yyyy HH:mm:ss", new CultureInfo("en-US"));
+        FromdateEpoch = dateTimeOffSet.ToUnixTimeSeconds();
+    }
+    void ToDate()
+    {
+        DateTimeOffset dateTimeOffSet = DateTimeOffset.ParseExact(SelectedYear_To.ToString()+"/"+ SelectedMonth_To.ToString() + "/" + SelectedDate_To.ToString() + "00:00:00", "dd/MM/yyyy HH:mm:ss", new CultureInfo("en-US"));
+        ToDateEpoch = dateTimeOffSet.ToUnixTimeSeconds();
+    }
+    public int GetLastNseconds()
+    {
+        
+        return (int)(ToDateEpoch- FromdateEpoch);
     }
     // this is for complete Dubai data
     public void DashboardStats()
     {
+
+        string url = OnlyDubai;
         Debug.Log("DashboardStats");
+        /*
         APIRequest(Root_URL_getDashboardStats, AccessToken, null, OnGetDashboardStatsSuccess, true, false);
         APIRequest(Root_URL_getBatteryStats, AccessToken, null, onGetBatteryStatsSuccess, true, false);
         APIRequest(Root_URL_getCleaningStats, AccessToken, null, onGetCleaningStatsSuccess, true, false);
@@ -89,6 +138,26 @@ public class ApiManager : MonoBehaviour
 
         APIRequest(Root_URL_getAlarms, AccessToken, null, onGetAlarmsData, true, false);
 
+        */
+        APIRequest(Root_URL_getDashboardStats + "?" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, OnGetDashboardStatsSuccess, true, false);
+        APIRequest(Root_URL_getBatteryStats + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetBatteryStatsSuccess, true, false);
+        APIRequest(Root_URL_getCleaningStats + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken , null, onGetCleaningStatsSuccess, true, false);
+        APIRequest(Root_URL_getConnectivityStats + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetConnectivityStatsSuccess, true, false);
+        APIRequest(Root_URL_getSensorStats + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetSensorStatsSuccess, true, false);
+        APIRequest(Root_URL_getTankStats + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetTankStatsSuccess, true, false);
+        APIRequest(Root_URL_getHierarchywisemonthlyComplianceScore + "?" + year2 + SelectedYear.ToString() + "&" + hierarchy + Uri.EscapeDataString(url) + "&" + monthno + SelectedMonth.ToString(), AccessToken, null, onGetComplianceScoreStatsSuccess, true, false);
+        APIRequest(Root_URL_gettanksmonthlycompliancescore + "?" + year2 + SelectedYear.ToString() + "&" + hierarchy + Uri.EscapeDataString(url) + "&" + monthno + SelectedMonth.ToString(), AccessToken, null, onGetMonthlyComplianceScoreStatsSuccess, true, false);
+        APIRequest(Root_URL_tanksyearlycompliancescore + "&" + hierarchy + Uri.EscapeDataString(url) + "&" + year2 + SelectedYear.ToString(), AccessToken, null, onGetYearlyComplianceScoreStatsSuccess, true, false);
+
+        APIRequest(Root_URL_getEnrolledTankStats + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetEnrolledTankStatsSuccess, true, false);
+        APIRequest(Root_URL_getTankConfigurations + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetTankConfigurationSuccess, true, false);
+
+        //APIRequest(Root_URL_getTelemetryHistory + "?" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetTelemetryHistory, true, false);
+
+        APIRequest(Root_URL_getAlarms + "?" + hierarchy + Uri.EscapeDataString(url) + "&" + pageSize + "10" + "&" + lastNSec + LastNseconds.ToString(), AccessToken, null, onGetAlarmsData, true, false);
+
+
+
 
         // Updating the UI
         APIDataGet.instance.SetApiDataToUI();
@@ -97,19 +166,48 @@ public class ApiManager : MonoBehaviour
     {
         string url;
         url= BaseDubai + quote + DistrictName + quote + RBrace;
-        Debug.Log(url);
-        Debug.Log(Uri.EscapeDataString(url));
-        APIRequest(Root_URL_getDashboardStats + hierarchy + Uri.EscapeDataString(url), AccessToken, null, OnGetDashboardStatsSuccess, true, false);
+       
+
+        APIRequest(Root_URL_getDashboardStats +"?"+ hierarchy + Uri.EscapeDataString(url), AccessToken, null, OnGetDashboardStatsSuccess, true, false);
+        APIRequest(Root_URL_getBatteryStats + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetBatteryStatsSuccess, true, false);
+        APIRequest(Root_URL_getCleaningStats + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken , null, onGetCleaningStatsSuccess, true, false);
+        APIRequest(Root_URL_getConnectivityStats + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetConnectivityStatsSuccess, true, false);
+        APIRequest(Root_URL_getSensorStats + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetSensorStatsSuccess, true, false);
+        APIRequest(Root_URL_getTankStats + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetTankStatsSuccess, true, false);
+        APIRequest(Root_URL_getHierarchywisemonthlyComplianceScore + "?" + year2 + SelectedYear.ToString() + "&" + hierarchy + Uri.EscapeDataString(url) + "&" + monthno + SelectedMonth.ToString(), AccessToken, null, onGetComplianceScoreStatsSuccess, true, false);
+        APIRequest(Root_URL_gettanksmonthlycompliancescore + "?" + year2 + SelectedYear.ToString() + "&" + hierarchy + Uri.EscapeDataString(url) + "&" + monthno + SelectedMonth.ToString(), AccessToken, null, onGetMonthlyComplianceScoreStatsSuccess, true, false);
+        APIRequest(Root_URL_tanksyearlycompliancescore + "&" + hierarchy + Uri.EscapeDataString(url) + "&" + year2 + SelectedYear.ToString(), AccessToken, null, onGetYearlyComplianceScoreStatsSuccess, true, false);
+
+        APIRequest(Root_URL_getEnrolledTankStats + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetEnrolledTankStatsSuccess, true, false);
+        APIRequest(Root_URL_getTankConfigurations + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetTankConfigurationSuccess, true, false);
+
+        //APIRequest(Root_URL_getTelemetryHistory + "?" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetTelemetryHistory, true, false);
+       
+        APIRequest(Root_URL_getAlarms + "?" + hierarchy + Uri.EscapeDataString(url) + "&" + pageSize + "10" + "&" + lastNSec + LastNseconds.ToString(), AccessToken, null, onGetAlarmsData, true, false);
 
     }
     public void DashboardStatsForSubDistricts(string DistrictName,string SubDistrictName)
     {
         string url;
         url = BaseDubai + quote + DistrictName + quote + comma + area+ Colon + quote + SubDistrictName + quote + RBrace;
-        Debug.Log(url);
-        Debug.Log(Uri.EscapeDataString(url));
-        APIRequest(Root_URL_getDashboardStats+ hierarchy+ Uri.EscapeDataString(url), AccessToken, null, OnGetDashboardStatsSuccess, true, false);
+        
+        APIRequest(Root_URL_getDashboardStats + "?" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, OnGetDashboardStatsSuccess, true, false);
+        APIRequest(Root_URL_getBatteryStats + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetBatteryStatsSuccess, true, false);
+        APIRequest(Root_URL_getCleaningStats + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken , null, onGetCleaningStatsSuccess, true, false);
+        APIRequest(Root_URL_getConnectivityStats + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetConnectivityStatsSuccess, true, false);
+        APIRequest(Root_URL_getSensorStats + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetSensorStatsSuccess, true, false);
+        APIRequest(Root_URL_getTankStats + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetTankStatsSuccess, true, false);
+        APIRequest(Root_URL_getHierarchywisemonthlyComplianceScore + "?" +year2+ SelectedYear.ToString() +"&"+hierarchy + Uri.EscapeDataString(url) + "&" + monthno +SelectedMonth.ToString(), AccessToken, null, onGetComplianceScoreStatsSuccess, true, false);
+        APIRequest(Root_URL_gettanksmonthlycompliancescore + "?" +year2+ SelectedYear.ToString() +"&"+hierarchy + Uri.EscapeDataString(url) + "&" + monthno +SelectedMonth.ToString(), AccessToken, null, onGetMonthlyComplianceScoreStatsSuccess, true, false);
+        APIRequest(Root_URL_tanksyearlycompliancescore + "&" + hierarchy + Uri.EscapeDataString(url)+"&"+year2 + SelectedYear.ToString(), AccessToken, null, onGetYearlyComplianceScoreStatsSuccess, true, false);
 
+        APIRequest(Root_URL_getEnrolledTankStats + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetEnrolledTankStatsSuccess, true, false);
+        APIRequest(Root_URL_getTankConfigurations + "&" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetTankConfigurationSuccess, true, false);
+
+        //APIRequest(Root_URL_getTelemetryHistory + "?" + hierarchy + Uri.EscapeDataString(url), AccessToken, null, onGetTelemetryHistory, true, false);
+
+        APIRequest(Root_URL_getAlarms + "?" + hierarchy + Uri.EscapeDataString(url) + "&" +pageSize+"10"+ "&" + lastNSec+LastNseconds.ToString(), AccessToken, null, onGetAlarmsData, true, false);
+        
     }
     void OnGetDashboardStatsSuccess(string response, string responseCode)
     {
