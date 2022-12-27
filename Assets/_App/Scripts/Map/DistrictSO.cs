@@ -8,6 +8,6 @@ using UnityEngine;
 public class DistrictSO : ScriptableObject
 {
     public string name;
-    public enum DistrictType { d1, d2, d3, d4, d5, d6, d7, d8 }
+    public enum DistrictType { BurDubai, Downtown, BusinessBay, AlBastakiya, AlKarama, DubaiMarina, Sector8, Sector9 }
     public DistrictType district;
 }
