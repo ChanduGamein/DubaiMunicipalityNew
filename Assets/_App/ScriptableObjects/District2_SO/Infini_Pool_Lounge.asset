@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Infini_Pool_Lounge
   m_EditorClassIdentifier: 
   name: Infini_Pool_Lounge
+  buildingID: FT0203
+  subDistrictName: The Walk
   material: {fileID: 2100000, guid: edbb2e1c656e0a54a9bd69e407eddd32, type: 2}
   nCoordinate: 25.2048
   eCoordinate: 55.2708
   district: 1
+  buildingType: 5

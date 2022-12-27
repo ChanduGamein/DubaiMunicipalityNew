@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Four_Season_Hotel_25_2128_55_2825
   m_EditorClassIdentifier: 
   name: Four_Season_Hotel_25_2128_55_2825
+  buildingID: FT0118
+  subDistrictName: DIFC
   material: {fileID: 2100000, guid: edbb2e1c656e0a54a9bd69e407eddd32, type: 2}
   nCoordinate: 25.2048
   eCoordinate: 55.2708
   district: 0
+  buildingType: 0

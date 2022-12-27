@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Doha_Cafeteria_25_261306_55_295917
   m_EditorClassIdentifier: 
   name: Doha_Cafeteria_25_261306_55_295917
+  buildingID: FT0183
+  subDistrictName: Bur Dubai
   material: {fileID: 2100000, guid: edbb2e1c656e0a54a9bd69e407eddd32, type: 2}
   nCoordinate: 25.2048
   eCoordinate: 55.2708
   district: 0
+  buildingType: 2

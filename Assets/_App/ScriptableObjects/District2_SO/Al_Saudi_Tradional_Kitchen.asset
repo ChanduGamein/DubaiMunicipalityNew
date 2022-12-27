@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Al_Saudi_Tradional_Kitchen
   m_EditorClassIdentifier: 
   name: Al_Saudi_Tradional_Kitchen
+  buildingID: FT0173
+  subDistrictName: Al Quoz Industrial Area 3
   material: {fileID: 2100000, guid: edbb2e1c656e0a54a9bd69e407eddd32, type: 2}
   nCoordinate: 25.2048
   eCoordinate: 55.2708
   district: 1
+  buildingType: 3

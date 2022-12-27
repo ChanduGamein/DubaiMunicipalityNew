@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Bayt_Al_Wakeel_Restaurant_25_2647_55_2939
   m_EditorClassIdentifier: 
   name: Bayt_Al_Wakeel_Restaurant_25_2647_55_2939
+  buildingID: FT0142
+  subDistrictName: Bur Dubai
   material: {fileID: 2100000, guid: edbb2e1c656e0a54a9bd69e407eddd32, type: 2}
   nCoordinate: 25.2048
   eCoordinate: 55.2708
   district: 0
+  buildingType: 1

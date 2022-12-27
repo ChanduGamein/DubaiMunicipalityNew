@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bd9da2cf43a714458e9b1e6ba80cc95, type: 3}
-  m_Name: Pipes_Shisha_Lounge_and_Cafe_25_200545_55_266892
+  m_Name: "park_avenue_caff\xE9"
   m_EditorClassIdentifier: 
-  name: Pipes_Shisha_Lounge_and_Cafe_25_200545_55_266892
+  name: "park_avenue_caff\xE9"
+  buildingID: FT0272
+  subDistrictName: Al Nahda
   material: {fileID: 2100000, guid: edbb2e1c656e0a54a9bd69e407eddd32, type: 2}
   nCoordinate: 25.2048
   eCoordinate: 55.2708
-  district: 0
+  district: 4
+  buildingType: 5

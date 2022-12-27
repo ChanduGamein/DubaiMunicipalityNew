@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: KempinskiHotel
   m_EditorClassIdentifier: 
   name: KempinskiHotel
+  buildingID: FT0082
+  subDistrictName: Al Barsha
   material: {fileID: 2100000, guid: 6a151709eb47d1743a46e5e5dc0c8809, type: 2}
   nCoordinate: 25.195
   eCoordinate: 55.24
   district: 1
+  buildingType: 0

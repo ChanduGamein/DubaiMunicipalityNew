@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bd9da2cf43a714458e9b1e6ba80cc95, type: 3}
-  m_Name: KOYLA_LONGUE_AND_CAFE_25_2899_55_3647_and_MEHFIL_CAFFE_AND_LONGUE_25_2898_55_3646
+  m_Name: Spicy_Touch_Cafeteria
   m_EditorClassIdentifier: 
-  name: KOYLA_LONGUE_AND_CAFE_25_2899_55_3647_and_MEHFIL_CAFFE_AND_LONGUE_25_2898_55_3646
+  name: Spicy_Touch_Cafeteria
+  buildingID: FT0190
+  subDistrictName: Bur Dubai
   material: {fileID: 2100000, guid: edbb2e1c656e0a54a9bd69e407eddd32, type: 2}
   nCoordinate: 25.2048
   eCoordinate: 55.2708
   district: 0
+  buildingType: 2

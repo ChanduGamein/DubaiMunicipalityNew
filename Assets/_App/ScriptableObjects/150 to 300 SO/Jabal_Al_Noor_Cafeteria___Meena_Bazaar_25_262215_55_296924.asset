@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Jabal_Al_Noor_Cafeteria___Meena_Bazaar_25_262215_55_296924
   m_EditorClassIdentifier: 
   name: Jabal_Al_Noor_Cafeteria___Meena_Bazaar_25_262215_55_296924
+  buildingID: FT0185
+  subDistrictName: Bur Dubai
   material: {fileID: 2100000, guid: edbb2e1c656e0a54a9bd69e407eddd32, type: 2}
   nCoordinate: 25.2048
   eCoordinate: 55.2708
   district: 0
+  buildingType: 2

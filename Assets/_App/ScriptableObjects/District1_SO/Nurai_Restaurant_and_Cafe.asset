@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bd9da2cf43a714458e9b1e6ba80cc95, type: 3}
-  m_Name: Toufan_Cafeteria_25_262356_55_294832
+  m_Name: Nurai_Restaurant_and_Cafe
   m_EditorClassIdentifier: 
-  name: Toufan_Cafeteria
+  name: Nurai_Restaurant_and_Cafe
+  buildingID: FT0230
+  subDistrictName: Business Bay
   material: {fileID: 2100000, guid: edbb2e1c656e0a54a9bd69e407eddd32, type: 2}
-  nCoordinate: 25.262356
-  eCoordinate: 55.294832
+  nCoordinate: 25.2048
+  eCoordinate: 55.2708
   district: 0
+  buildingType: 5

@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: "FETA_RESTUARENT_AND_CAF\xC9_25_2590_55_3219"
   m_EditorClassIdentifier: 
   name: "FETA_RESTUARENT_AND_CAF\xC9_25_2590_55_3219"
+  buildingID: FT0241
+  subDistrictName: Al Rigga
   material: {fileID: 2100000, guid: edbb2e1c656e0a54a9bd69e407eddd32, type: 2}
   nCoordinate: 25.2048
   eCoordinate: 55.2708
   district: 0
+  buildingType: 5

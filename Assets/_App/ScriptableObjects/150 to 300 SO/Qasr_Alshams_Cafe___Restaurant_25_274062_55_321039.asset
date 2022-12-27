@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Qasr_Alshams_Cafe___Restaurant_25_274062_55_321039
   m_EditorClassIdentifier: 
   name: Qasr_Alshams_Cafe___Restaurant__
+  buildingID: FT0221
+  subDistrictName: Deira
   material: {fileID: 2100000, guid: edbb2e1c656e0a54a9bd69e407eddd32, type: 2}
-  nCoordinate: 25.274062
-  eCoordinate: 55.321039
+  nCoordinate: 25.274061
+  eCoordinate: 55.321037
   district: 0
+  buildingType: 5

@@ -602,6 +602,71 @@ public class MainUICanvas : MonoBehaviour
                 AssignBuildingPoint(122);
                 AssignBuildingName(buildingName);
                 break;
+            case "Nurai_Restaurant_and_Cafe":
+                AssignBuildingPoint(123);
+                AssignBuildingName(buildingName);
+                break;
+            case "Pickl_catering_Services_LLC":
+                AssignBuildingPoint(124);
+                AssignBuildingName(buildingName);
+                break;
+            case "Pipes_Shisha_Lounge_and_Cafe":
+                AssignBuildingPoint(125);
+                AssignBuildingName(buildingName);
+                break;
+            case "Pura_Catering":
+                AssignBuildingPoint(126);
+                AssignBuildingName(buildingName);
+                break;
+            case "Qaser_Al_Quoz_Kitchen":
+                AssignBuildingPoint(127);
+                AssignBuildingName(buildingName);
+                break;
+            case "Qasr_Alshams_Cafe___Restaurant__":
+                AssignBuildingPoint(128);
+                AssignBuildingName(buildingName);
+                break;
+            case "Qedreh___Mansaf_Catering":
+                AssignBuildingPoint(129);
+                AssignBuildingName(buildingName);
+                break;
+            case "Skyhawk_Catering__Taqado_Mexican_Central_Kitchen":
+                AssignBuildingPoint(130);
+                AssignBuildingName(buildingName);
+                break;
+            case "Slices_Catering":
+                AssignBuildingPoint(131);
+                AssignBuildingName(buildingName);
+                break;
+            case "Spicy_Touch_Cafeteria":
+                AssignBuildingPoint(132);
+                AssignBuildingName(buildingName);
+                break;
+            case "Strawberry_Corner_Cafeteria":
+                AssignBuildingPoint(133);
+                AssignBuildingName(buildingName);
+                break;
+            case "Toufan_Cafeteria":
+                AssignBuildingPoint(134);
+                AssignBuildingName(buildingName);
+                break;
+            case "W11_Shisha_Lounge___Restaurant":
+                AssignBuildingPoint(135);
+                AssignBuildingName(buildingName);
+                break;
+            case "infinity_café_lounge":
+                AssignBuildingPoint(136);
+                AssignBuildingName(buildingName);
+                break;
+            case "KOYLA_LONGUE_AND_CAFE_and_MEHFIL_CAFFE_AND_LONGUE":
+                AssignBuildingPoint(137);
+                AssignBuildingName(buildingName);
+                break;
+            case "park_avenue_caffé":
+                AssignBuildingPoint(138);
+                AssignBuildingName(buildingName);
+                break;
+
             //case "infinity_café_lounge":
             //    AssignBuildingPoint(109);
             //    AssignBuildingName(buildingName);

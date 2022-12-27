@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Noor_Al_Jamaheer_Kitchen_LLC
   m_EditorClassIdentifier: 
   name: Noor_Al_Jamaheer_Kitchen_LLC
+  buildingID: FT0157
+  subDistrictName: Al Quoz Industrial Area 4
   material: {fileID: 2100000, guid: edbb2e1c656e0a54a9bd69e407eddd32, type: 2}
   nCoordinate: 25.2048
   eCoordinate: 55.2708
   district: 0
+  buildingType: 3
