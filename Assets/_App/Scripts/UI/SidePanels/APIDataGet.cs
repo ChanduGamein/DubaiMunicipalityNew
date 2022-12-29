@@ -31,10 +31,22 @@ public class BuildingCanvasVariables
     #endregion
 }
 [System.Serializable]
-public class WasteWaterStatsVariables
+public class HierarchyWiseMonthlyComplianceScore
 {
     #region Waste Water Stats Variables
     public List<Image> WasteWaterHistograms;
+    public List<Image> fogHistograms;
+    #endregion
+}
+[System.Serializable]
+public class Alarms
+{
+    #region Alarm Variables
+    public List <Text> AlarmDate;
+    public List<Text> tankId;
+    public List <Text> description;
+    public List <Text> location;
+    public List <Text> severity;
     #endregion
 }
 public class APIDataGet : MonoBehaviour
@@ -43,7 +55,8 @@ public class APIDataGet : MonoBehaviour
 
     public CleaningStatsVariables cleaningStatsVariables;
     public BuildingCanvasVariables buildingCanvasVariables;
-    public WasteWaterStatsVariables wasteWaterStatsVariables;
+    public HierarchyWiseMonthlyComplianceScore hierarchyWiseMonthlyComplianceScore;
+    public Alarms alarms;
 
     private void Awake()
     {
@@ -57,7 +70,7 @@ public class APIDataGet : MonoBehaviour
     {
         SetCleaningStatesToUI();
         SetBuildingStatsToUI();
-        SetWasteWaterDateToUI();
+        SetHierarchyWiseMonthlyComplianceScoreToUI();
     }
     public void SetCleaningStatesToUI()
     {
@@ -90,14 +103,18 @@ public class APIDataGet : MonoBehaviour
         }
 
     }
-    public void SetWasteWaterDateToUI()
+    public void SetHierarchyWiseMonthlyComplianceScoreToUI()
     {
-        //if (APIResponseManager.instance.gethierarchywisemonthlycompliancescore != null)
-        //{
-        //    for (int i = 0; i < wasteWaterStatsVariables.WasteWaterHistograms.Count; i++)
-        //    {
-        //        wasteWaterStatsVariables.WasteWaterHistograms[i].fillAmount = APIResponseManager.instance.gethierarchywisemonthlycompliancescore.data[i].wasteWaterVolumeCollected;
-        //    }
-        //}
+        if (APIResponseManager.instance.gethierarchywisemonthlycompliancescore != null)
+        {
+            for (int i = 0; i < hierarchyWiseMonthlyComplianceScore.WasteWaterHistograms.Count; i++)
+            {
+                hierarchyWiseMonthlyComplianceScore.WasteWaterHistograms[i].fillAmount = APIResponseManager.instance.gethierarchywisemonthlycompliancescore.totalData.wasteWaterVolumeCollected;
+            }
+            for (int i = 0; i < hierarchyWiseMonthlyComplianceScore.fogHistograms.Count; i++)
+            {
+                hierarchyWiseMonthlyComplianceScore.fogHistograms[i].fillAmount = APIResponseManager.instance.gethierarchywisemonthlycompliancescore.totalData.fogVolumeCollected;
+            }
+        }
     }
 }

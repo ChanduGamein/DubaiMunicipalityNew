@@ -590,13 +590,13 @@ public class AlarmsData
     public List<Bsr1> bsr1 ;
     public List<Bsr2> bsr2 ;
     public List<Bsr3> bsr3 ;
-    public string tid ;
-    public string lid ;
+    public string tid ; //tank id
+    public string lid ; //location id
     public string alarmId ;
     public string code ;
-    public string severity ;
-    public string message ;
-    public object alarmDate ;
+    public string severity ; //critical
+    public string message ; //description
+    public object alarmDate ; //
     public TelemetryDetailsAlarms telemetryDetails ;
     public TankStateAlarms tankState ;
     public MetaDataAlarms metaData ;
