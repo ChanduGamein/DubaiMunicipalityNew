@@ -34,8 +34,8 @@ public class BuildingCanvasVariables
 public class HierarchyWiseMonthlyComplianceScore
 {
     #region Waste Water Stats Variables
-    public List<Image> WasteWaterHistograms;
-    public List<Image> fogHistograms;
+    public List<RectTransform> wasteWaterPoints;
+    public List<RectTransform> fogPoints;
     #endregion
 }
 [System.Serializable]
@@ -107,13 +107,13 @@ public class APIDataGet : MonoBehaviour
     {
         if (APIResponseManager.instance.gethierarchywisemonthlycompliancescore != null)
         {
-            for (int i = 0; i < hierarchyWiseMonthlyComplianceScore.WasteWaterHistograms.Count; i++)
+            for (int i = 0; i < hierarchyWiseMonthlyComplianceScore.wasteWaterPoints.Count; i++)
             {
-                hierarchyWiseMonthlyComplianceScore.WasteWaterHistograms[i].fillAmount = APIResponseManager.instance.gethierarchywisemonthlycompliancescore.totalData.wasteWaterVolumeCollected;
+                hierarchyWiseMonthlyComplianceScore.wasteWaterPoints[i].anchoredPosition =new Vector2(hierarchyWiseMonthlyComplianceScore.wasteWaterPoints[i].anchoredPosition.x, APIResponseManager.instance.gethierarchywisemonthlycompliancescore.totalData.wasteWaterVolumeCollected/10000000);
             }
-            for (int i = 0; i < hierarchyWiseMonthlyComplianceScore.fogHistograms.Count; i++)
+            for (int i = 0; i < hierarchyWiseMonthlyComplianceScore.fogPoints.Count; i++)
             {
-                hierarchyWiseMonthlyComplianceScore.fogHistograms[i].fillAmount = APIResponseManager.instance.gethierarchywisemonthlycompliancescore.totalData.fogVolumeCollected;
+                hierarchyWiseMonthlyComplianceScore.fogPoints[i].anchoredPosition = new Vector2(hierarchyWiseMonthlyComplianceScore.fogPoints[i].anchoredPosition.x, APIResponseManager.instance.gethierarchywisemonthlycompliancescore.totalData.fogVolumeCollected/ 10000000);
             }
         }
     }

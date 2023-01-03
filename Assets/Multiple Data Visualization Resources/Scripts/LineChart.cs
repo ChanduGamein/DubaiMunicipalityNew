@@ -52,7 +52,7 @@ public class LineChart : MonoBehaviour
             {
                 Vector3 v = (allPoint[a + 1].anchoredPosition - allPoint[a].anchoredPosition);
              
-                allPoint[a].GetChild(0).GetComponent<RectTransform>().sizeDelta =new Vector2( v.magnitude,50);
+                allPoint[a].GetChild(0).GetComponent<RectTransform>().sizeDelta =new Vector2( v.magnitude/3.8f,50);
                 allPoint[a].GetChild(0).right = v;
 
             }
