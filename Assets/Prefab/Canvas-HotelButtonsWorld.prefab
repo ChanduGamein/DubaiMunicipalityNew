@@ -118,7 +118,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754417913122609}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -137,6 +137,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &9213129188736116900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +301,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754417953641449}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -319,6 +320,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &567091494832503565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,7 +484,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754417962108144}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -501,6 +503,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &2591219535335629356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,7 +667,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754417978994242}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -683,6 +686,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &1926553197068726854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -846,7 +850,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418019294222}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -865,6 +869,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &2990305444556853720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1028,7 +1033,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418038297764}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -1047,6 +1052,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &3463688096326471234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1210,7 +1216,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418138515571}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -1229,6 +1235,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &2910576701214439209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1392,7 +1399,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418165231073}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -1411,6 +1418,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &8879726211427388309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1574,7 +1582,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418231079800}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -1593,6 +1601,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &1479159935172258026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1756,7 +1765,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418260531075}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -1775,6 +1784,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &2833041938040412414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1938,7 +1948,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418260863412}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -1957,6 +1967,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &6544161953958570801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2120,7 +2131,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418283964690}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -2139,6 +2150,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &3079732510734489034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2302,7 +2314,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418290915561}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -2321,6 +2333,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &3797715904134424402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2484,7 +2497,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418304893077}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -2503,6 +2516,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &4722799450230908656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2666,7 +2680,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418305817316}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -2685,6 +2699,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &3646380125475087553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2848,7 +2863,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418312194047}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -2867,6 +2882,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &984132918191162223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3030,7 +3046,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418346976245}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -3049,6 +3065,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &5674181277751070178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3212,7 +3229,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418367589667}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -3231,6 +3248,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &4721276476794078475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3394,7 +3412,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418391238542}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -3413,6 +3431,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &2197353285978529202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3576,7 +3595,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418488452412}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -3595,6 +3614,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &4802600179823448664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3758,7 +3778,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418495139053}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -3777,6 +3797,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &4370117728797741496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3940,7 +3961,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418533704126}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -3959,6 +3980,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &6436980857656503016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4122,7 +4144,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418545470095}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -4141,6 +4163,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &8449700093411083686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4304,7 +4327,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418557844023}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -4323,6 +4346,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &2429102781526045441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4486,7 +4510,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418573064249}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -4505,6 +4529,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &8764349707211652906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4668,7 +4693,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418577867609}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -4687,6 +4712,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &26506900855834557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4850,7 +4876,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418640415046}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -4869,6 +4895,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &1101413662178106965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5032,7 +5059,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418650030692}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -5051,6 +5078,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &4658034249895009900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5214,7 +5242,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418651350340}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -5233,6 +5261,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &5868962346268576492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5396,7 +5425,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418748955448}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -5415,6 +5444,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &4319829377073540074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5578,7 +5608,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418758706392}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -5597,6 +5627,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &110591336165712180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5760,7 +5791,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418770003391}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -5779,6 +5810,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &7367563156921737660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5942,7 +5974,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418782352429}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -5961,6 +5993,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &6854088048877993043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6124,7 +6157,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418799436218}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -6143,6 +6176,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &1506729942476846467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6306,7 +6340,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418813792311}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -6325,6 +6359,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &8350973077491605093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6488,7 +6523,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418829301703}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -6507,6 +6542,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &2763599427557431170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6670,7 +6706,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418848725868}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -6689,6 +6725,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &1874130257099762981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6852,7 +6889,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418898373527}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -6871,6 +6908,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &4868402355041817751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7034,7 +7072,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418918007546}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -7053,6 +7091,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &6228619798483873218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7216,7 +7255,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754418974318289}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -7235,6 +7274,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &217458492509958099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7398,7 +7438,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419026119604}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -7417,6 +7457,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &6509948589303722973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7580,7 +7621,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419082149558}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -7599,6 +7640,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &6760270615948833688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7762,7 +7804,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419108691695}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -7781,6 +7823,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &6611210615999809469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7944,7 +7987,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419120908562}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -7963,6 +8006,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &3152054860938565956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8126,7 +8170,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419136226339}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -8145,6 +8189,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &7246586518705909521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8308,7 +8353,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419150238283}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -8327,6 +8372,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &5515203460427796521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8490,7 +8536,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419159208580}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -8509,6 +8555,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &4517598619620166416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8672,7 +8719,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419207135754}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -8691,6 +8738,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &3513323926563422123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8854,7 +8902,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419225277923}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -8873,6 +8921,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &7523890436209472783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9036,7 +9085,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419279910523}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -9055,6 +9104,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &2220718809067119107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9218,7 +9268,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419280279130}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -9237,6 +9287,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &3154583196361153861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9400,7 +9451,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419329307235}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -9419,6 +9470,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &8742118119300168794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9582,7 +9634,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419341318323}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -9601,6 +9653,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &3240192855440416094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9764,7 +9817,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419341638990}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -9783,6 +9836,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &6653849270724068822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9992,7 +10046,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &8485754419349353109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10128,7 +10182,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419398792985}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -10147,6 +10201,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &3891710507187611579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10310,7 +10365,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419400363265}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -10329,6 +10384,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &4684739994865097594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10492,7 +10548,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419475152216}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -10511,6 +10567,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &6105710204243790557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10674,7 +10731,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419477057907}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -10693,6 +10750,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &8895284014225566782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10856,7 +10914,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419508335542}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -10875,6 +10933,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &2937434784352807168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11038,7 +11097,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419522115879}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -11057,6 +11116,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &310425268907910330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11220,7 +11280,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419535749548}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -11239,6 +11299,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &8605488206061285552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11402,7 +11463,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419550252311}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -11421,6 +11482,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &8957984436534399173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11584,7 +11646,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419582760883}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -11603,6 +11665,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &3803971942991863466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11766,7 +11829,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419621439812}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -11785,6 +11848,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &8246777969201046342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11948,7 +12012,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419627540772}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -11967,6 +12031,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &2673012520005580211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12130,7 +12195,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419630845608}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -12149,6 +12214,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &526552636039156113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12312,7 +12378,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419672958438}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -12331,6 +12397,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &2669362669291270762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12494,7 +12561,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419701893853}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -12513,6 +12580,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &5680923067823188010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12676,7 +12744,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419779935364}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -12695,6 +12763,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &8434248605788755906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12858,7 +12927,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419781469032}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -12877,6 +12946,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &5798288858889305102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13040,7 +13110,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419783606110}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -13059,6 +13129,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &1094669174449546137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13222,7 +13293,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419836878497}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -13241,6 +13312,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &7789593999891919570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13404,7 +13476,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419848789204}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -13423,6 +13495,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &8856839493844035127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13586,7 +13659,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419876536970}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -13605,6 +13678,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &7863343175946418316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13768,7 +13842,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419881891101}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -13787,6 +13861,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &6591965159234703974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13950,7 +14025,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419886016829}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -13969,6 +14044,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &3750751558984233925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14132,7 +14208,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419923726528}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -14151,6 +14227,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &4183826833873384560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14314,7 +14391,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419940637656}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -14333,6 +14410,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &2844908977713619556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14496,7 +14574,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419941495252}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -14515,6 +14593,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &7794372715994549447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14678,7 +14757,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419943605880}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -14697,6 +14776,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &6474692500852247125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14860,7 +14940,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419952677512}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -14879,6 +14959,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &1249462125741201057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15042,7 +15123,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419961451340}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -15061,6 +15142,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &2317052772774729394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15224,7 +15306,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 8485754419984687100}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -15243,6 +15325,7 @@ MonoBehaviour:
   myCameraPosition: {fileID: 0}
   buildingData: {fileID: 11400000, guid: daf2cec5f1ee45d4ba8478db356e3ead, type: 2}
   Health: 0
+  isBuilding: 0
 --- !u!114 &7546294744354374739
 MonoBehaviour:
   m_ObjectHideFlags: 0
