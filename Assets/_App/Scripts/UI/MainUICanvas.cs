@@ -593,7 +593,7 @@ public class MainUICanvas : MonoBehaviour
             case "Nepali_Sagarmatha_Restauran":
                 AssignBuildingPoint(120);
                 AssignBuildingName(buildingName);
-                break; 
+                break;
             case "New_Thalassery_Cafeteria":
                 AssignBuildingPoint(121);
                 AssignBuildingName(buildingName);
@@ -907,5 +907,10 @@ public class MainUICanvas : MonoBehaviour
             SidePanelImg.sprite = SidePanelToggleSprites[0];
 
         }
+        foreach (Transform T in DistrictHolder.transform)
+        {
+            T.gameObject.SetActive(true);
+        }
+
     }
 }
